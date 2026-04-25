@@ -171,3 +171,11 @@ Description = Resists all types when HP is full.
 [TERAFORMZERO]
 Name = Teraform Zero
 Description = Eliminates all weather and terrain.
+#-------------------------------
+[SPICYSPRAY]
+Name = Spicy Spray
+Description = The foe is burned if the user is damaged.
+#-------------------------------
+[MEGASOL]
+Name = Mega Sol
+Description = The user's moves are always treated as being in harsh sunlight.
