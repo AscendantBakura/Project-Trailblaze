@@ -1,0 +1,5 @@
+Name       = BW Speech Bubble
+Version    = 2.2.0
+Essentials = 21.1
+Link       = https://www.pokecommunity.com/threads/bw-speech-bubbles-v2-1-0.535833/
+Credits    = Carmaniac, Nononever

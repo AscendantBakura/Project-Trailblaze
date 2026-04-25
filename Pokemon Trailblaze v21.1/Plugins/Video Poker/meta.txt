@@ -1,0 +1,4 @@
+Name      = Video Poker
+Version   = 1.0
+Website   = https://www.pokecommunity.com/threads/537824/
+Credits   = FL

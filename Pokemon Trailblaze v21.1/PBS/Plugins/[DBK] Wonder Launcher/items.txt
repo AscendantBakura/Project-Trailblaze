@@ -1,0 +1,156 @@
+### Apply changes by holding SHIFT while compiling. ###
+#-------------------------------
+[POTION]
+LauncherPoints = 2
+#-------------------------------
+[SUPERPOTION]
+LauncherPoints = 4
+#-------------------------------
+[HYPERPOTION]
+LauncherPoints = 8
+#-------------------------------
+[MAXPOTION]
+LauncherPoints = 10
+#-------------------------------
+[FULLRESTORE]
+LauncherPoints = 13
+#-------------------------------
+[AWAKENING]
+LauncherPoints = 4
+#-------------------------------
+[ANTIDOTE]
+LauncherPoints = 4
+#-------------------------------
+[BURNHEAL]
+LauncherPoints = 4
+#-------------------------------
+[PARALYZEHEAL]
+LauncherPoints = 4
+#-------------------------------
+[ICEHEAL]
+LauncherPoints = 4
+#-------------------------------
+[FULLHEAL]
+LauncherPoints = 5
+#-------------------------------
+[REVIVE]
+LauncherPoints = 11
+#-------------------------------
+[MAXREVIVE]
+LauncherPoints = 14
+#-------------------------------
+[ETHER]
+LauncherPoints = 4
+#-------------------------------
+[MAXETHER]
+LauncherPoints = 6
+#-------------------------------
+[ELIXIR]
+LauncherPoints = 8
+#-------------------------------
+[MAXELIXIR]
+LauncherPoints = 10
+#-------------------------------
+[XATTACK]
+LauncherPoints = 3
+#-------------------------------
+[XATTACK2]
+LauncherPoints = 5
+#-------------------------------
+[XATTACK3]
+LauncherPoints = 7
+#-------------------------------
+[XATTACK6]
+LauncherPoints = 12
+#-------------------------------
+[XDEFENSE]
+LauncherPoints = 3
+#-------------------------------
+[XDEFENSE2]
+LauncherPoints = 5
+#-------------------------------
+[XDEFENSE3]
+LauncherPoints = 7
+#-------------------------------
+[XDEFENSE6]
+LauncherPoints = 12
+#-------------------------------
+[XSPATK]
+LauncherPoints = 3
+#-------------------------------
+[XSPATK2]
+LauncherPoints = 5
+#-------------------------------
+[XSPATK3]
+LauncherPoints = 7
+#-------------------------------
+[XSPATK6]
+LauncherPoints = 12
+#-------------------------------
+[XSPDEF]
+LauncherPoints = 3
+#-------------------------------
+[XSPDEF2]
+LauncherPoints = 5
+#-------------------------------
+[XSPDEF3]
+LauncherPoints = 7
+#-------------------------------
+[XSPDEF6]
+LauncherPoints = 12
+#-------------------------------
+[XSPEED]
+LauncherPoints = 3
+#-------------------------------
+[XSPEED2]
+LauncherPoints = 5
+#-------------------------------
+[XSPEED3]
+LauncherPoints = 7
+#-------------------------------
+[XSPEED6]
+LauncherPoints = 12
+#-------------------------------
+[XACCURACY]
+LauncherPoints = 3
+#-------------------------------
+[XACCURACY2]
+LauncherPoints = 5
+#-------------------------------
+[XACCURACY3]
+LauncherPoints = 7
+#-------------------------------
+[XACCURACY6]
+LauncherPoints = 12
+#-------------------------------
+[DIREHIT]
+LauncherPoints = 3
+#-------------------------------
+[DIREHIT2]
+LauncherPoints = 5
+#-------------------------------
+[DIREHIT3]
+LauncherPoints = 7
+#-------------------------------
+[GUARDSPEC]
+LauncherPoints = 3
+#-------------------------------
+[RESETURGE]
+Description = When used, it restores any stat changes of a target Pokémon.
+LauncherPoints = 9
+LauncherUse = OnTarget
+#-------------------------------
+[ABILITYURGE]
+Description = When used, it activates the Ability of a target Pokémon.
+LauncherPoints = 3
+LauncherUse = OnTarget
+#-------------------------------
+[ITEMURGE]
+Description = When used, it causes a target Pokémon to use its held item.
+LauncherPoints = 2
+LauncherUse = OnTarget
+#-------------------------------
+[ITEMDROP]
+Description = When used, it causes a target Pokémon to drop its held item.
+LauncherPoints = 6
+LauncherUse = OnTarget

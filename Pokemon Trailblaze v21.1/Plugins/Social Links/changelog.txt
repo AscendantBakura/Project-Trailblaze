@@ -1,0 +1,23 @@
+===Change Log===
+1.3.1
+- New feature: Free Market NPC support. Added support for adding Buyer-specific Parameters to SocialLinkProfile definitions so Social Links can purchase player lots if using the Free Market plugin.
+
+1.3
+- New feature: Catch Rate Boosts. You can now add :CatchRate as a :bond_effect, to alter the Catch Rates for Pokémon when you reach certain Bond levels with Social Links. Just like the other :bond_effect types, this requires manual code changes to be supported. These changes are described in the Setup and Document guide.
+- Fixed bond effect messages so they use the properly capitalized name of the affected type, instead of all caps ("ELECTRIC-type" => "Electric-type").
+
+1.2
+- New feature: Moments. Moments can be used as a way to track whether or not a Social Link is ready to increase their Bond with the player. The can increase for minor things that help improve your relationship with a Social Link. You can think of these as hidden points for granular interactions with Social Links. Using these is completely optional.
+Example uses as minor positive experiences that can lead to increasing Bond with them later on:
+- Choosing a positive response choice when talking to a Social Link
+- Healing a Social Link's Pokémon while in a partner double battle
+- Buying an item from a Social Link
+
+The Setup and Documentation guide has been updated to include information and functions related to Moments.
+
+1.1 
+- New feature: NPC Specific Max Bond. You can now set bond_max as a parameter to override the default BOND_LEVEL_MAX for an NPC, allowing for different NPCs to have different max bond levels.
+- New feature: NPC Specific Bond Icon Positions. You can now set bond_icon_coords as a parameter to override the default positions of bond icons for an NPC. This can be used with bond_max to make the Social Media Profile UI look cleaner for different max bond levels.
+
+1.0 
+- Initial Release
