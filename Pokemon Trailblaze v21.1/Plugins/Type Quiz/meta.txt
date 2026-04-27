@@ -1,0 +1,5 @@
+Name = Type Quiz
+Version = 1.1
+Credits = FL
+Essentials = V21.1
+Link = https://www.pokecommunity.com/showthread.php?t=306090
