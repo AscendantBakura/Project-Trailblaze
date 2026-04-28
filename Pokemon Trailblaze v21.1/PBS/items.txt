@@ -6626,3 +6626,38 @@ Pocket = 8
 Price = 0
 Flags = KeyItem
 Description = A faded sea chart that shows the way to a certain island.
+#-------------------------------
+[CONTESTPASS]
+Name = Contest Pass
+NamePlural = Contest Pass
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A pass required for entering Pokémon Contests.
+#-------------------------------
+[POKEBLOCKCASE]
+Name = Pokéblock Case
+NamePlural = Pokéblock Cases
+Pocket = 8
+Price = 0
+FieldUse = Direct
+Flags = KeyItem
+Description = A case for holding Pokéblocks made with a Berry Blender.
+#-------------------------------
+[POKEBLOCKKIT]
+Name = Pokéblock Kit
+NamePlural = Pokéblock Kit
+Pocket = 8
+Price = 0
+FieldUse = Direct
+Flags = KeyItem
+Description = A set containing a Berry Blender for making Pokéblocks and a Pokéblock Case for storing Pokéblocks.
+#-------------------------------
+[POKEBLOCKCONDITION]
+Name = Condition Checker
+NamePlural = Condition Checkers
+Pocket = 8
+Price = 0
+FieldUse = Direct
+Flags = KeyItem
+Description = An item for checking a Pokémon's contest stats.
