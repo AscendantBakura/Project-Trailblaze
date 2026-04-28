@@ -73,7 +73,7 @@ module ContestSettings
 	# The following is the Animation ID that represents the heart animation that
 	# NPCs will show when judging a Pokemon in the Introduction Round of a contest.
 	#--------------------------------------------------------------------------------
-	HEART_ANIMATION_ID 			= 8
+	HEART_ANIMATION_ID 			= 18
 	
 	#--------------------------------------------------------------------------------
 	# Define the Map ID and starting coordinates for each contest room based on rank
