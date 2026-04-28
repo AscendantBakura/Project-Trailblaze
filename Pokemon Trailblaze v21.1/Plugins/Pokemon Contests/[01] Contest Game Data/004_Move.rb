@@ -19,10 +19,15 @@ module GameData
 		  "ContestDescription"  => [:contest_description,   	"q"],
 		}
 
+
 		extend ClassMethodsSymbols
 		include InstanceMethods
 
+
 		# @return [String] the translated description of this move
+
+
+
 		def contest_description(compile = false)
 			return getFunctionContestDescription if !compile && ContestSettings::GET_MOVE_DESCRIPTIONS_FROM_FUNCTION
 			return _INTL("Cannot be used in a contest.") if !compile && !contest_can_be_used?
@@ -30,7 +35,8 @@ module GameData
 		end
 
 		def has_contest_flag?(flag)
-			return @contest_flags.any? { |f| f.downcase == flag.downcase }
+		return false if !@contest_flags || @contest_flags.empty?
+		return @contest_flags.any? { |f| f.downcase == flag.downcase }
 		end
 	
 		alias contests_hasflag has_flag?
