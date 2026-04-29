@@ -104,6 +104,11 @@ module Settings
             :graphic => "Graphics/UI/Event Indicators/event_question",
             :always_visible => true,
             :ignore_time_shading => true
+	},
+        "accepted" => {
+            :graphic => "Graphics/UI/Event Indicators/flair_important",
+            :always_visible => true,
+            :ignore_time_shading => true
         }
     }
 

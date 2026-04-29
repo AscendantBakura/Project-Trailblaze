@@ -160,4 +160,15 @@ module QuestModule
     :RewardString => "Food, glorious food!"
   }
 
+  Quest13 = {
+    :ID => "13",
+    :Name => "Get Your Starter",
+    :QuestGiver => "The Professor",
+    :Stage1 => "Speak to the Professor.",
+    :Stage2 => "Seriously, talk to the Professor!",
+    :Location1 => "In the City",
+    :QuestDescription => "Time to select my partner!",
+    :RewardString => "A Pokemon!"
+  }
+
 end
