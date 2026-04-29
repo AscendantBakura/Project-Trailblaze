@@ -23,7 +23,7 @@ module ContestSettings
 	#--------------------------------------------------------------------------------
 	# Define the default lobby map for contests. By default, it's 33.
 	#--------------------------------------------------------------------------------
-	DEFAULT_LOBBY_MAP_ID 		= 22
+	DEFAULT_LOBBY_MAP_ID 		= 33
 	
 	#--------------------------------------------------------------------------------
 	# Define the default return coordinates for contests. It's set up in the
@@ -90,9 +90,9 @@ module ContestSettings
 	#--------------------------------------------------------------------------------
 	ROOM_MAP_COORDINATES = [ 
 		[[32,12,9],nil,nil,nil,nil], # Normal: Cool(default), Beauty, Cute, Smart, Tough
-		[[33,12,9],nil,nil,nil,nil], # Super: Cool(default), Beauty, Cute, Smart, Tough
-		[[42,12,9],nil,nil,nil,nil], # Hyper: Cool(default), Beauty, Cute, Smart, Tough
-		[[43,12,9],nil,nil,nil,nil] # Master: Cool(default), Beauty, Cute, Smart, Tough
+		[[43,12,9],nil,nil,nil,nil], # Super: Cool(default), Beauty, Cute, Smart, Tough
+		[[48,12,9],nil,nil,nil,nil], # Hyper: Cool(default), Beauty, Cute, Smart, Tough
+		[[76,12,9],nil,nil,nil,nil] # Master: Cool(default), Beauty, Cute, Smart, Tough
 	]
 	
 end
