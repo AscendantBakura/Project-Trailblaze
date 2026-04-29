@@ -36,7 +36,7 @@ module GameData
 
 		def has_contest_flag?(flag)
 		return false if !@contest_flags || @contest_flags.empty?
-		return @contest_flags.any? { |f| f.downcase == flag.downcase }
+		return @contest_flags.any? { |f| f == flag }
 		end
 	
 		alias contests_hasflag has_flag?
