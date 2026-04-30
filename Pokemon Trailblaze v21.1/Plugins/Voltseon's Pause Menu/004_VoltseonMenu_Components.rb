@@ -186,19 +186,19 @@ class VPM_DateAndTimeHud < Component
   end
 
   def refresh
-    time  = pbGetTimeNow 
-    text  = _INTL("{1} {2} {3}", time.day.to_i, pbGetAbbrevMonthName(time.month.to_i), time.year.to_i)
-    text2 = _INTL("{1}", time.strftime("%I:%M %p"))
+    text = _INTL("STR:{1} INT:{2}", $game_variables[126], $game_variables[127])
+	text2 = _INTL("CHR:{1} SKL:{2}", $game_variables[129], $game_variables[128])
+    text3 = _INTL("NRG:{1} ITR:{2}", $game_variables[18], $game_variables[130])
     @sprites["overlay"].bitmap.clear
-    pbSetSmallFont(@sprites["overlay"].bitmap)
-    pbDrawTextPositions(@sprites["overlay"].bitmap,[[text, (Graphics.width / 2) - 8, 12, 1,
-      @base_color, @shdw_color], [text2, (Graphics.width / 2) - 8, 34, 1, @base_color, @shdw_color]])
-    @last_time = time.min
+    pbSetSystemFont(@sprites["overlay"].bitmap)
+    pbDrawTextPositions(@sprites["overlay"].bitmap,[[text,Graphics.width/2 - 8, 0,1,
+      @baseColor,@shadowColor],[text2,Graphics.width/2 - 8,32,1,@baseColor,@shadowColor],[text3,Graphics.width/2 - 8,64,1,@baseColor,@shadowColor]])
+    @last_time = pbGetTimeNow.strftime("%I:%M %p")
   end
 end
 
 #-------------------------------------------------------------------------------
-# New Quesst Message Hud component
+# New Quest Message Hud component
 #-------------------------------------------------------------------------------
 class VPM_NewQuestHud < Component
   def initialize
