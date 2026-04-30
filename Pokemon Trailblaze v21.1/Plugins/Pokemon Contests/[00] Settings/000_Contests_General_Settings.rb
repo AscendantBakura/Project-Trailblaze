@@ -42,7 +42,7 @@ module ContestSettings
 	# When true, if a Pokemon maxes out the Applause meter and they have an available
 	# mega evolution, they mega evolve and gain an extra 2 appeal.
 	#--------------------------------------------------------------------------------
-	SHOW_SPECIAL_TRANSFORMATIONS		= false
+	SHOW_SPECIAL_TRANSFORMATIONS		= true
 	
 	#--------------------------------------------------------------------------------
 	# When true, executing a combo in a contest will double the base appeal a move
