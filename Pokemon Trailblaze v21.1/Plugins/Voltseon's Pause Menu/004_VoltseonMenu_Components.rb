@@ -177,7 +177,8 @@ class VPM_DateAndTimeHud < Component
     @color_str = Color.new(255, 64, 64)   # red
     @color_int = Color.new(64, 128, 255)   # blue
     @color_chr = Color.new(255, 128, 192)  # pink
-    @color_skl = Color.new(96, 255, 96)    # green
+    @color_dex = Color.new(96, 255, 96)    # green
+    @color_nrg = Color.new(248, 152, 24)    # orange
     @base_color = $PokemonSystem.from_current_menu_theme(MENU_TEXTCOLOR, Color.new(155, 155, 155))
     @shdw_color = $PokemonSystem.from_current_menu_theme(MENU_TEXTOUTLINE, Color.new(42, 42, 42))
   end
@@ -193,18 +194,16 @@ class VPM_DateAndTimeHud < Component
     text = _INTL("STR:{1}", $game_variables[126])
 	  text2 = _INTL("CHR:{1}", $game_variables[129])
     text3 = _INTL("INT:{1}", $game_variables[127])
-    text4 = _INTL("SKL:{1}", $game_variables[128])
+    text4 = _INTL("DEX:{1}", $game_variables[128])
     text5 = _INTL("NRG:{1}", $game_variables[18])
-    text6 = _INTL("ITR:{1}", $game_variables[130])
     @sprites["overlay"].bitmap.clear
     pbSetSystemFont(@sprites["overlay"].bitmap)
     pbDrawTextPositions(@sprites["overlay"].bitmap,[
       [text,Graphics.width/2 - 3, 0,1,@color_str,@shdw_color],
       [text2,Graphics.width/3 - 4,0,1,@color_chr,@shdw_color],
       [text3,Graphics.width/2 - 3,32,1,@color_int,@shdw_color],
-      [text4,Graphics.width/3 - 4,32,1,@color_skl,@shdw_color],
-      [text5,Graphics.width/2 - 3,64,1,@base_color,@shdw_color],
-      [text5,Graphics.width/3 - 4,64,1,@base_color,@shdw_color]
+      [text4,Graphics.width/3 - 4,32,1,@color_dex,@shdw_color],
+      [text5,Graphics.width/3 - 4,64,1,@color_nrg,@shdw_color]
     ])
 
     @last_time = pbGetTimeNow.strftime("%I:%M %p")
