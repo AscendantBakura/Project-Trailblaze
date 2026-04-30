@@ -78,6 +78,7 @@ class PokemonContest
 		$stats.pokemon_contests_participated_category[@category] += 1
 		$stats.pokemon_contests_participated_rank[@rank] += 1
 		$stats.pokemon_contests_participated_category_rank[@category][@rank] += 1
+		$game_variables[100] = ($game_variables[100] || 0) + (@playerWin ? 5 : 1)
 		pbWait(2)
 	end
 

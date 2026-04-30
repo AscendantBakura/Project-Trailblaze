@@ -186,6 +186,7 @@ class VPM_DateAndTimeHud < Component
 
   def update
     super
+    refresh if (pbGetTimeNow.strftime("%I:%M %p") != @last_time) && !@menu.should_exit
   end
 
   def refresh

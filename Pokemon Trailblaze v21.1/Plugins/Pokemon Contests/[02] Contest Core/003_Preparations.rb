@@ -8,6 +8,7 @@
 def pbPokemonContest(rank: nil, category: nil, pokemon: nil)
 	pbPrepPokemonContest(rank, category, pokemon)
 	return if !$PokemonGlobal.pokemonContest
+	$game_switches[162] = true
 	pbCurrentPokemonContest.pbIntroductionRound
 	pbCurrentPokemonContest.pbTalentRound
 	pbCurrentPokemonContest.pbResults
