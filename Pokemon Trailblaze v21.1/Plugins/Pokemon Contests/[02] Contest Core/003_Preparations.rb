@@ -41,19 +41,19 @@ def pbPrepPokemonContest(rank = nil, category = nil, pokemon = nil)
 	else
 		choice = pbMessage(_INTL("Would you like to enter your Pokémon in a Contest?"),cmds,-1)
 	end
-	return pbMessage(_INTL("I see, try again tommorow if you change your mind. NEXT!")) if choice < 0 || choice == 1
+	return pbMessage(_INTL("I see, we hope you will participate another time.")) if choice < 0 || choice == 1
 	#Choose Category
 	if !category
 		cmds_c = [_INTL("#{pbContestCatName(0)} Contest"), _INTL("#{pbContestCatName(1)} Contest"), _INTL("#{pbContestCatName(2)} Contest"), _INTL("#{pbContestCatName(3)} Contest"), _INTL("#{pbContestCatName(4)} Contest"), _INTL("Exit")]
 		cat = pbMessage(_INTL("Which Contest would you like to enter?"), cmds_c, -1)
-		return pbMessage(_INTL("I see, try again tommorow if you change your mind. NEXT!")) if cat < 0 || cat == 5
+		return pbMessage(_INTL("I see, we hope you will participate another time.")) if cat < 0 || cat == 5
 		category = cat
 	end
 	#Choose Rank
 	if !rank
 		cmds_r = [_INTL("Normal Rank"), _INTL("Super Rank"), _INTL("Hyper Rank"), _INTL("Master Rank"), _INTL("Exit")]
 		rnk = pbMessage(_INTL("Which Rank would you like to enter?"), cmds_r, -1)
-		return pbMessage(_INTL("I see, try again tommorow if you change your mind. NEXT!")) if rnk < 0 || rnk == 4
+		return pbMessage(_INTL("I see, we hope you will participate another time.")) if rnk < 0 || rnk == 4
 		rank = rnk
 	end
 	#Choose Pokemon
