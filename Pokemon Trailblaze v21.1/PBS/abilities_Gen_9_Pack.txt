@@ -179,3 +179,11 @@ Description = The foe is burned if the user is damaged.
 [MEGASOL]
 Name = Mega Sol
 Description = The user's moves are always treated as being in harsh sunlight.
+#-------------------------------
+[DRAGONIZE]
+Name = Dragonize
+Description = Normal-type moves become Dragon-type and powered up.
+#-------------------------------
+[GHOULIATE]
+Name = Ghouliate
+Description = Normal-type moves become Ghost-type and powered up.

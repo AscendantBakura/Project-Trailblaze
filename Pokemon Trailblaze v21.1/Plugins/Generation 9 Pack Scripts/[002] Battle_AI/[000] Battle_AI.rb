@@ -6,7 +6,7 @@
 class Battle::AI
   GEN_9_BASE_ABILITY_RATINGS = {
     9  => [:ORICHALCUMPULSE, :HADRONENGINE],
-    8  => [:THERMALEXCHANGE],
+    8  => [:THERMALEXCHANGE, :DRAGONIZE, :GHOULIATE],
     7  => [:EARTHEATER, :TOXICDEBRIS, :PROTOSYNTHESIS, :QUARKDRIVE, :SUPERSWEETSYRUP, :MINDSEYE],
     6  => [:SUPREMEOVERLORD, :SEEDSOWER, :OPPORTUNIST],
     5  => [:ARMORTAIL, :ROCKYPAYLOAD, :SHARPNESS, :LINGERINGAROMA, :CUDCHEW, 
@@ -355,7 +355,7 @@ class Battle::AI::AIMove
     # Ability effects that alter damage
     if user.ability_active?
       case user.ability_id
-      when :AERILATE, :GALVANIZE, :PIXILATE, :REFRIGERATE
+      when :AERILATE, :GALVANIZE, :PIXILATE, :REFRIGERATE, :DRAGONIZE, :GHOULIATE
         multipliers[:power_multiplier] *= 1.2 if type == :NORMAL   # NOTE: Not calc_type.
       when :ANALYTIC
         if rough_priority(user) <= 0

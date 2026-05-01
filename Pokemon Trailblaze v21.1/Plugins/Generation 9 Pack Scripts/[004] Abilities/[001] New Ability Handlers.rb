@@ -453,6 +453,26 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:HADRONENGINE,
 )
 
 #===============================================================================
+# Dragonize, Ghouliate
+#===============================================================================
+
+Battle::AbilityEffects::ModifyMoveBaseType.add(:DRAGONIZE,
+  proc { |ability, user, move, type|
+    next if type != :NORMAL || !GameData::Type.exists?(:DRAGON)
+    move.powerBoost = true
+    next :DRAGON
+  }
+)
+
+Battle::AbilityEffects::ModifyMoveBaseType.add(:GHOULIATE,
+  proc { |ability, user, move, type|
+    next if type != :NORMAL || !GameData::Type.exists?(:GHOST)
+    move.powerBoost = true
+    next :GHOST
+  }
+)
+
+#===============================================================================
 # Protosynthesis, Quark Drive
 #===============================================================================
 Battle::AbilityEffects::OnSwitchIn.add(:PROTOSYNTHESIS,
@@ -520,6 +540,14 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:PROTOSYNTHESIS,
 )
 
 Battle::AbilityEffects::DamageCalcFromUser.copy(:PROTOSYNTHESIS, :QUARKDRIVE)
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:DRAGONIZE,
+  proc { |ability, user, target, move, mults, power, type|
+    mults[:power_multiplier] *= 1.2 if move.powerBoost
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromUser.copy(:DRAGONIZE, :GHOULIATE)
 
 #-------------------------------------------------------------------------------
 # Damage calcs (Target).
