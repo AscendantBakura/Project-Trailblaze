@@ -1,29 +1,5 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-[PHALANX]
-Name = Phalanx
-Type = STEEL
-Category = Physical
-Power = 120
-Accuracy = 85
-TotalPP = 10
-Target = NearOther
-FunctionCode = None
-Flags = Contact,CanProtect,CanMirrorMove
-Description = Using a mighty spear attacks.
-#-------------------------------
-[SPOOKYSPOOK]
-Name = Spooky Spook
-Type = GHOST
-Category = Physical
-Power = 90
-Accuracy = 100
-TotalPP = 10
-Target = NearOther
-FunctionCode = CurseTarget
-Flags = Contact,CanProtect,CanMirrorMove
-Description = Scares the target with mean pranks.
-#-------------------------------
 [MEGAHORN]
 Name = Megahorn
 Type = BUG
@@ -8882,3 +8858,28 @@ Target = NearOther
 FunctionCode = BindTarget
 Flags = CanProtect,CanMirrorMove
 Description = A sharp scaley body is used to wrap and squeeze the target for four to five turns.
+#-------------------------------
+[PHALANX]
+Name = Phalanx
+Type = STEEL
+Category = Physical
+Power = 120
+Accuracy = 85
+TotalPP = 10
+Target = NearOther
+FunctionCode = None
+Flags = Contact,CanProtect,CanMirrorMove
+Description = Using a mighty spear attacks.
+#-------------------------------
+[SPOOKYSPOOK]
+Name = Spooky Spook
+Type = GHOST
+Category = Physical
+Power = 90
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = CurseTarget
+Flags = Contact,CanProtect,CanMirrorMove
+Description = Scares the target with mean pranks.
+#-------------------------------

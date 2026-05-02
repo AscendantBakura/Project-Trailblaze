@@ -9,6 +9,15 @@ FieldUse = OnPokemon
 Flags = Fling_30,EvolutionStone
 Description = A glassy black stone that produces a sharp cutting edge when split. It’s loved by a certain Pokémon.
 #-------------------------------
+[LUNARPEATBLOCK]
+Name = Lunar Peat Block
+NamePlural = Lunar Peat Blocks
+Pocket = 1
+Price = 2100
+FieldUse = OnPokemon
+Flags = Fling_30,EvolutionStone
+Description = A block of muddy material that is for fuel. It’s loved by a certain Pokémon.
+#-------------------------------
 [PEATBLOCK]
 Name = Peat Block
 NamePlural = Peat Blocks

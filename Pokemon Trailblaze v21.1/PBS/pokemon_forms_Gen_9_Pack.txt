@@ -14,6 +14,7 @@ Category = Scout
 Pokedex = They patrol their territory in pairs. The igneous rock components in the fur of this species are the result of volcanic activity in its habitat.
 Generation = 8
 Flags = InheritFormWithEverStone
+Evolutions = ARCANINE,ItemFormOne,FIRESTONE
 RaidRanks = 1,2,3
 #-------------------------------
 [ARCANINE,1]
@@ -245,6 +246,7 @@ Color = White
 Category = Spiteful Fox
 Pokedex = A once-departed soul, returned to life. Derives power from resentment, which rises as energy atop its head. In this way, Zorua vents lingering malice.
 Generation = 8
+Evolutions = ZOROARK,LevelFormOne,30
 Flags = InheritFormWithEverStone
 RaidRanks = 1,2
 #-------------------------------

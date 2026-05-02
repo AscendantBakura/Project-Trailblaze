@@ -3515,7 +3515,7 @@ Category = Mantis
 Pokedex = Its blindingly fast speed adds to the sharpness of its twin forearm scythes. The scythes can slice through thick logs in one wicked stroke.
 Generation = 1
 Flags = HasGenderedSprites
-Evolutions = SCIZOR,TradeItem,METALCOAT
+Evolutions = SCIZOR,HoldItem,METALCOAT,KLEAVOR,HoldItem,BLACKAUGURITE
 CallRateSOS = 3
 RaidRanks = 3,4
 #-------------------------------
@@ -6161,6 +6161,7 @@ Habitat = Mountain
 Category = Hibernator
 Pokedex = In forests, it is said that there are many streams and towering trees where an Ursaring gathers food. It walks through its forest collecting food every day.
 Generation = 2
+Evolutions = URSALUNA,HoldItem,PEATBLOCK,URSALUNA,HoldItemFormOne,LUNARPEATBLOCK
 Flags = HasGenderedSprites
 RaidRanks = 3,4
 #-------------------------------

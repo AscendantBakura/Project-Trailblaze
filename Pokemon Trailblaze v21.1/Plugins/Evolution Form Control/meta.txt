@@ -1,0 +1,5 @@
+Name       = Evolution Form Control
+Version    = 1.1
+Optional   = Generation 9 Pack,1.0
+Essentials = 20.1,21.1
+Credits    = wrigty12
