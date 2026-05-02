@@ -529,6 +529,34 @@ Battle::AbilityEffects::OnTerrainChange.add(:QUARKDRIVE,
 )
 
 #-------------------------------------------------------------------------------
+# Vigor, Sinister, Mystic 
+#-------------------------------------------------------------------------------
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:VIGOR,
+  proc { |ability, user, target, move, mults, power, type|
+    if user.hp <= user.totalhp / 3 && type == :FIGHTING
+      mults[:attack_multiplier] *= 1.5
+    end
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:SINISTER,
+  proc { |ability, user, target, move, mults, power, type|
+    if user.hp <= user.totalhp / 3 && type == :DARK
+      mults[:attack_multiplier] *= 1.5
+    end
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:MYSTIC,
+  proc { |ability, user, target, move, mults, power, type|
+    if user.hp <= user.totalhp / 3 && type == :PSYCHIC
+      mults[:attack_multiplier] *= 1.5
+    end
+  }
+)
+
+#-------------------------------------------------------------------------------
 # Damage calcs (User).
 Battle::AbilityEffects::DamageCalcFromUser.add(:PROTOSYNTHESIS,
   proc { |ability, user, target, move, mults, baseDmg, type|

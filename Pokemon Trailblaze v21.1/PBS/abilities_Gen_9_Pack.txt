@@ -187,3 +187,15 @@ Description = Normal-type moves become Dragon-type and powered up.
 [GHOULIATE]
 Name = Ghouliate
 Description = Normal-type moves become Ghost-type and powered up.
+#-------------------------------
+[VIGOR]
+Name = Vigor
+Description = Powers up Fighting-type moves in a pinch.
+#-------------------------------
+[SINISTER]
+Name = Sinister
+Description = Powers up Dark-type moves in a pinch.
+#-------------------------------
+[MYSTIC]
+Name = Mystic
+Description = Powers up Psychic-type moves in a pinch.
