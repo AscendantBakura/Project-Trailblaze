@@ -1,0 +1,6 @@
+1.0.1
+- Fixed an issue where hacking games wouldn't be recognized by the database after compressing game data.
+- Fixed a crash if you tried to add a Key Node linked to a Locked Node that has its puzzle set to Always Random. This is not allowed because the puzzle will change every time the player interacts with it, so the Key Node will never be accurate.
+
+1.0
+- Initial Release

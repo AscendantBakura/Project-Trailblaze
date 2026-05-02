@@ -1,0 +1,4 @@
+Name       = Hacking Minigame
+Version    = 1.0.1
+Essentials = 20.1,21.1
+Credits    = wrigty12
