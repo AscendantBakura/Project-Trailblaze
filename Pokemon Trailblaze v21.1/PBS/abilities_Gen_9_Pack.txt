@@ -199,3 +199,7 @@ Description = Powers up Dark-type moves in a pinch.
 [MYSTIC]
 Name = Mystic
 Description = Powers up Psychic-type moves in a pinch.
+#-------------------------------
+[SILKENELEGANCE]
+Name = Silken Elegance
+Description = When using a Dancing move set a tailwind.

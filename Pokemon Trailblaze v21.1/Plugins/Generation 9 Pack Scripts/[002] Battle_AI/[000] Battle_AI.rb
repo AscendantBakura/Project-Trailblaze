@@ -7,7 +7,7 @@ class Battle::AI
   GEN_9_BASE_ABILITY_RATINGS = {
     9  => [:ORICHALCUMPULSE, :HADRONENGINE],
     8  => [:THERMALEXCHANGE, :DRAGONIZE, :GHOULIATE],
-    7  => [:EARTHEATER, :TOXICDEBRIS, :PROTOSYNTHESIS, :QUARKDRIVE, :SUPERSWEETSYRUP, :MINDSEYE],
+    7  => [:EARTHEATER, :TOXICDEBRIS, :PROTOSYNTHESIS, :QUARKDRIVE, :SUPERSWEETSYRUP, :MINDSEYE, :SILKENELEGANCE],
     6  => [:SUPREMEOVERLORD, :SEEDSOWER, :OPPORTUNIST],
     5  => [:ARMORTAIL, :ROCKYPAYLOAD, :SHARPNESS, :LINGERINGAROMA, :CUDCHEW, 
            :TOXICCHAIN, :POISONPUPPETEER, :VIGOR, :SINISTER, :MYSTIC],
@@ -752,6 +752,24 @@ Battle::AI::Handlers::GeneralMoveScore.add(:thawing_move_when_frozen,
       elsif user.check_for_move { |m| m.thawsUser? }
         score -= 20   # Don't prefer this move if user knows another move that thaws
         PBDebug.log_score_change(score - old_score, "user knows another move will thaw it")
+      end
+    end
+    next score
+  }
+)
+
+#===============================================================================
+# If user have the ability Siken Elegance, prefer a move with dance tag
+#===============================================================================
+Battle::AI::Handlers::GeneralMoveScore.add(:prefer_dance_for_silkenelegance,
+  proc { |score, move, user, ai, battle|
+    if ai.trainer.medium_skill? &&
+       user.has_active_ability?(:SILKENELEGANCE) &&
+       user.pbOwnSide.effects[PBEffects::Tailwind] == 0
+      if move.move.has_flag?("Dance")
+        old = score
+        score += 25
+        PBDebug.log_score_change(score - old, "prefer Dance (SILKENELEGANCE -> Tailwind)")
       end
     end
     next score

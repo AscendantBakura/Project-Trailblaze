@@ -556,6 +556,23 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:MYSTIC,
   }
 )
 
+#-----------------------------------------------------------------------#
+# Silken Elegence
+#-----------------------------------------------------------------------#
+Battle::AbilityEffects::OnEndOfUsingMove.add(:SILKENELEGANCE,
+  proc { |ability, user, targets, move, battle|
+  next if battle.pbAllFainted?
+  next unless move.flags && move.flags.include?("Dance")
+  next if user.pbOwnSide.effects[PBEffects::Tailwind] > 0
+  
+  battle.pbShowAbilitySplash(user)
+  user.pbOwnSide.effects[PBEffects::Tailwind] = 5
+  battle.pbAnimation(:TAILWIND, user, targets)
+  battle.pbDisplay(_INTL("The Tailwind blew from behind {1}!", user.pbTeam(true)))
+  battle.pbHideAbilitySplash(user)
+  }
+)
+
 #-------------------------------------------------------------------------------
 # Damage calcs (User).
 Battle::AbilityEffects::DamageCalcFromUser.add(:PROTOSYNTHESIS,
