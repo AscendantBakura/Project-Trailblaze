@@ -427,7 +427,8 @@ class Pokemon
 			"Startled"			=> false,
 			"Nervous"			=> false,
 			"Allow Mega"		=> canContestMegaEvolve?(trainer),
-			"Mega Evolved"		=> false
+			"Mega Evolved"		=> false,
+			"OGForm"			=> self.form
 		}
 	end
 	
@@ -445,6 +446,9 @@ class Pokemon
 	end
 	
 	def clearContestVariables #End of Contest
+		if @contestVariables
+			self.form = @contestVariables["OGForm"] if @contestVariables["OGForm"] 
+		end
 		@contestVariables = nil
 	end
 	
