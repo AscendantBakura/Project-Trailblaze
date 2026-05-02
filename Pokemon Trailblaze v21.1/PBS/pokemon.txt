@@ -17255,7 +17255,7 @@ RaidRanks = 3,4
 [MIENFOO]
 Name = Mienfoo
 Types = FIGHTING
-BaseStats = 45,85,50,65,55,50
+BaseStats = 60,85,50,65,55,50
 GenderRatio = Female50Percent
 GrowthRate = Parabolic
 BaseExp = 70
