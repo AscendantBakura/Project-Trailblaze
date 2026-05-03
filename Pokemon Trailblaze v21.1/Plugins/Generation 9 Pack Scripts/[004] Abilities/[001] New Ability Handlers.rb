@@ -453,6 +453,21 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:HADRONENGINE,
 )
 
 #===============================================================================
+# Ghouliate
+#===============================================================================
+
+Battle::AbilityEffects::ModifyMoveBaseType.add(:GHOULIATE,
+  proc { |ability, user, move, type|
+    next if type != :NORMAL || !GameData::Type.exists?(:GHOST)
+    move.powerBoost = true
+    next :GHOST
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromUser.copy(:AERILATE, :GHOULIATE)
+
+
+#===============================================================================
 # Protosynthesis, Quark Drive
 #===============================================================================
 Battle::AbilityEffects::OnSwitchIn.add(:PROTOSYNTHESIS,
@@ -505,6 +520,51 @@ Battle::AbilityEffects::OnSwitchIn.copy(:PROTOSYNTHESIS, :QUARKDRIVE)
 Battle::AbilityEffects::OnTerrainChange.add(:QUARKDRIVE,
   proc { |ability, battler, battle, switch_in|
     Battle::AbilityEffects.triggerOnSwitchIn(ability, battler, battle, switch_in)
+  }
+)
+
+#-------------------------------------------------------------------------------
+# Vigor, Sinister, Mystic 
+#-------------------------------------------------------------------------------
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:VIGOR,
+  proc { |ability, user, target, move, mults, power, type|
+    if user.hp <= user.totalhp / 3 && type == :FIGHTING
+      mults[:attack_multiplier] *= 1.5
+    end
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:SINISTER,
+  proc { |ability, user, target, move, mults, power, type|
+    if user.hp <= user.totalhp / 3 && type == :DARK
+      mults[:attack_multiplier] *= 1.5
+    end
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:MYSTIC,
+  proc { |ability, user, target, move, mults, power, type|
+    if user.hp <= user.totalhp / 3 && type == :PSYCHIC
+      mults[:attack_multiplier] *= 1.5
+    end
+  }
+)
+
+#-----------------------------------------------------------------------#
+# Silken Elegance
+#-----------------------------------------------------------------------#
+Battle::AbilityEffects::OnEndOfUsingMove.add(:SILKENELEGANCE,
+  proc { |ability, user, targets, move, battle|
+  next if battle.pbAllFainted?
+  next unless move.flags && move.flags.include?("Dance")
+  next if user.pbOwnSide.effects[PBEffects::Tailwind] > 0
+  
+  battle.pbShowAbilitySplash(user)
+  user.pbOwnSide.effects[PBEffects::Tailwind] = 5
+  battle.pbAnimation(:TAILWIND, user, targets)
+  battle.pbDisplay(_INTL("The Tailwind blew from behind {1}!", user.pbTeam(true)))
+  battle.pbHideAbilitySplash(user)
   }
 )
 

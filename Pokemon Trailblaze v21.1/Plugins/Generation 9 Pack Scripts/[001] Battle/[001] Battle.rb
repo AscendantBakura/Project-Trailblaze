@@ -303,7 +303,7 @@ class Battle::Move
     # Ability
     return pbBaseType(battler) if battler&.hasActiveAbility?([:AERILATE, :GALVANIZE, :PIXILATE,
                                                               :REFRIGERATE, :LIQUIDVOICE, :NORMALIZE,
-                                                              :DRAGONIZE])
+                                                              :DRAGONIZE, :GHOULIATE])
     return paldea_display_type(battler)
   end
   

@@ -6,11 +6,11 @@
 class Battle::AI
   GEN_9_BASE_ABILITY_RATINGS = {
     9  => [:ORICHALCUMPULSE, :HADRONENGINE, :MEGASOL],
-    8  => [:THERMALEXCHANGE,:DRAGONIZE],
-    7  => [:EARTHEATER, :TOXICDEBRIS, :PROTOSYNTHESIS, :QUARKDRIVE, :SUPERSWEETSYRUP, :MINDSEYE],
+    8  => [:THERMALEXCHANGE,:DRAGONIZE, :GHOULIATE],
+    7  => [:EARTHEATER, :TOXICDEBRIS, :PROTOSYNTHESIS, :QUARKDRIVE, :SUPERSWEETSYRUP, :MINDSEYE, :SILKENELEGANCE],
     6  => [:SUPREMEOVERLORD, :SEEDSOWER, :OPPORTUNIST, :SPICYSPRAY],
     5  => [:ARMORTAIL, :ROCKYPAYLOAD, :SHARPNESS, :LINGERINGAROMA, :CUDCHEW, 
-           :TOXICCHAIN, :POISONPUPPETEER],
+           :TOXICCHAIN, :POISONPUPPETEER, :VIGOR, :SINISTER, :MYSTIC],
     4  => [:PURIFYINGSALT, :WELLBAKEDBODY, :ANGERSHELL, :ELECTROMORPHOSIS, :WINDPOWER],
     3  => [:WINDRIDER, :HOSPITALITY,
            :TABLETSOFRUIN, :SWORDOFRUIN, :VESSELOFRUIN, :BEADSOFRUIN
@@ -356,7 +356,7 @@ class Battle::AI::AIMove
     # Ability effects that alter damage
     if user.ability_active?
       case user.ability_id
-      when :AERILATE, :GALVANIZE, :PIXILATE, :REFRIGERATE, :DRAGONIZE
+      when :AERILATE, :GALVANIZE, :PIXILATE, :REFRIGERATE, :DRAGONIZE, :GHOULIATE
         multipliers[:power_multiplier] *= 1.2 if type == :NORMAL   # NOTE: Not calc_type.
       when :ANALYTIC
         if rough_priority(user) <= 0
@@ -753,6 +753,24 @@ Battle::AI::Handlers::GeneralMoveScore.add(:thawing_move_when_frozen,
       elsif user.check_for_move { |m| m.thawsUser? }
         score -= 20   # Don't prefer this move if user knows another move that thaws
         PBDebug.log_score_change(score - old_score, "user knows another move will thaw it")
+      end
+    end
+    next score
+  }
+)
+
+#===============================================================================
+# If user have the ability Siken Elegance, prefer a move with dance tag
+#===============================================================================
+Battle::AI::Handlers::GeneralMoveScore.add(:prefer_dance_for_silkenelegance,
+  proc { |score, move, user, ai, battle|
+    if ai.trainer.medium_skill? &&
+       user.has_active_ability?(:SILKENELEGANCE) &&
+       user.pbOwnSide.effects[PBEffects::Tailwind] == 0
+      if move.move.has_flag?("Dance")
+        old = score
+        score += 25
+        PBDebug.log_score_change(score - old, "prefer Dance (SILKENELEGANCE -> Tailwind)")
       end
     end
     next score

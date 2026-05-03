@@ -49,6 +49,36 @@ Battle::AI::Handlers::AbilityRanking.add(:HADRONENGINE,
   }
 )
 
+Battle::AI::Handlers::AbilityRanking.add(:VIGOR,
+  proc { |ability, score, battler, ai|
+    next score if battler.has_damaging_move_of_type?(:FIGHTING)
+    next 0
+  }
+)
+
+Battle::AI::Handlers::AbilityRanking.add(:SINISTER,
+  proc { |ability, score, battler, ai|
+    next score if battler.has_damaging_move_of_type?(:DARK)
+    next 0
+  }
+)
+
+Battle::AI::Handlers::AbilityRanking.add(:MYSTIC,
+  proc { |ability, score, battler, ai|
+    next score if battler.has_damaging_move_of_type?(:PSYCHIC)
+    next 0
+  }
+)
+
+Battle::AI::Handlers::AbilityRanking.add(:SILKENELEGANCE,
+  proc { |ability, score, battler, ai|
+    next score if battler.check_for_move { |m| m.has_flag?("Dance") }
+    next 0
+  }
+)
+
+
+
 Battle::AI::Handlers::AbilityRanking.add(:POISONPUPPETEER,
   proc { |ability, score, battler, ai|
     next score if battler.check_for_move do |m|
