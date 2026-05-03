@@ -172,17 +172,21 @@ Description = Resists all types when HP is full.
 Name = Teraform Zero
 Description = Eliminates all weather and terrain.
 #-------------------------------
-[SPICYSPRAY]
-Name = Spicy Spray
-Description = The foe is burned if the user is damaged.
-#-------------------------------
 [MEGASOL]
 Name = Mega Sol
-Description = The user's moves are always treated as being in harsh sunlight.
+Description = Uses its moves as if in sunny weather.
 #-------------------------------
 [DRAGONIZE]
 Name = Dragonize
-Description = Normal-type moves become Dragon-type and powered up.
+Description = Normal-type moves become Dragon-type and powered.
+#-------------------------------
+[PIERCINGDRILL]
+Name = Piercing Drill
+Description = Contact moves deals a quarter of damage against protections.
+#-------------------------------
+[SPICYSPRAY]
+Name = Spicy Spray
+Description = Burns the attacker when hit by a damaging move.
 #-------------------------------
 [GHOULIATE]
 Name = Ghouliate

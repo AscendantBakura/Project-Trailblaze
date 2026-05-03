@@ -49,34 +49,6 @@ Battle::AI::Handlers::AbilityRanking.add(:HADRONENGINE,
   }
 )
 
-Battle::AI::Handlers::AbilityRanking.add(:VIGOR,
-  proc { |ability, score, battler, ai|
-    next score if battler.has_damaging_move_of_type?(:FIGHTING)
-    next 0
-  }
-)
-
-Battle::AI::Handlers::AbilityRanking.add(:SINISTER,
-  proc { |ability, score, battler, ai|
-    next score if battler.has_damaging_move_of_type?(:DARK)
-    next 0
-  }
-)
-
-Battle::AI::Handlers::AbilityRanking.add(:MYSTIC,
-  proc { |ability, score, battler, ai|
-    next score if battler.has_damaging_move_of_type?(:PSYCHIC)
-    next 0
-  }
-)
-
-Battle::AI::Handlers::AbilityRanking.add(:SILKENELEGANCE,
-  proc { |ability, score, battler, ai|
-    next score if battler.check_for_move { |m| m.has_flag?("Dance") }
-    next 0
-  }
-)
-
 Battle::AI::Handlers::AbilityRanking.add(:POISONPUPPETEER,
   proc { |ability, score, battler, ai|
     next score if battler.check_for_move do |m|
@@ -90,6 +62,22 @@ Battle::AI::Handlers::AbilityRanking.add(:POISONPUPPETEER,
       m.is_a?(Battle::Move::StarmobilePoisonTarget) ||                       # Noxious Torque
       m.is_a?(Battle::Move::ProtectUserBanefulBunker) ||                     # Baneful Bunker
       m.is_a?(Battle::Move::PoisonParalyzeOrSleepTarget)                     # Dire Claw
+    end
+    next 0
+  }
+)
+
+#================================================================================================
+# Champions
+#================================================================================================
+Battle::AI::Handlers::AbilityRanking.add(:MEGASOL,
+  proc { |ability, score, battler, ai|
+    next score if battler.check_for_move do |m|
+      m.is_a?(Battle::Move::RaiseUserAtkSpAtk1Or2InSun) ||                   # Growth
+      m.is_a?(Battle::Move::TypeAndPowerDependOnWeather) ||                  # Weather Ball
+      m.is_a?(Battle::Move::TwoTurnAttackOneTurnInSun) ||                    # Solar Beam, Solar Blade
+      m.is_a?(Battle::Move::HealUserDependingOnWeather) ||                   # Moonlight, Morning Sun, Synthesis
+      m.is_a?(Battle::Move::IncreasePowerInSunWeather)                       # Hydro Stream
     end
     next 0
   }

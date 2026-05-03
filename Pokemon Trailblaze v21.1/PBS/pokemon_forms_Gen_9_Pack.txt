@@ -14,8 +14,6 @@ Category = Scout
 Pokedex = They patrol their territory in pairs. The igneous rock components in the fur of this species are the result of volcanic activity in its habitat.
 Generation = 8
 Flags = InheritFormWithEverStone
-Evolutions = ARCANINE,ItemFormOne,FIRESTONE
-RaidRanks = 1,2,3
 #-------------------------------
 [ARCANINE,1]
 FormName = Hisuian
@@ -29,7 +27,6 @@ Weight = 168.0
 Pokedex = Snaps at its foes with fangs cloaked in blazing flame. Despite its bulk, it deftly feints every which way, leading opponents on a deceptively merry chase.
 Generation = 8
 Flags = InheritFormWithEverStone
-RaidRanks = 4,5
 #-------------------------------
 [VOLTORB,1]
 FormName = Hisuian
@@ -44,7 +41,6 @@ Pokedex = An enigmatic Pokémon that happens to bear a resemblance to a Poké Ba
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = ELECTRODE,Item,LEAFSTONE
-RaidRanks = 1,2
 #-------------------------------
 [ELECTRODE,1]
 FormName = Hisuian
@@ -57,7 +53,6 @@ Category = Sphere
 Pokedex = The surface tissue of its body is oddly similar in composition to an Apricorn. When irritated, this Pokémon looses an electric current equal to 20 lightning bolts.
 Generation = 8
 Flags = InheritFormWithEverStone
-RaidRanks = 3,4
 #-------------------------------
 [TAUROS,1]
 FormName = Paldean (Combat Breed)
@@ -72,7 +67,6 @@ Color = Black
 Pokedex = This kind of Tauros, known as the Combat Breed, is distinguished by its thick, powerful muscles and its fierce disposition.
 Generation = 9
 Flags = InheritFormWithEverStone
-RaidRanks = 4,5
 #-------------------------------
 [TAUROS,2]
 FormName = Paldean (Blaze Breed)
@@ -87,7 +81,6 @@ Color = Black
 Pokedex = People call this kind of Tauros the Blaze Breed due to the hot air it snorts from its nostrils. Its three tails are intertwined.
 Generation = 9
 Flags = InheritFormWithEverStone
-RaidRanks = 4,5
 #-------------------------------
 [TAUROS,3]
 FormName = Paldean (Aqua Breed)
@@ -102,7 +95,6 @@ Color = Black
 Pokedex = It swims by jetting water from its horns. The most notable characteristic of the Aqua Breed is its high body fat, which allows it to float easily.
 Generation = 9
 Flags = InheritFormWithEverStone
-RaidRanks = 4,5
 #-------------------------------
 [TYPHLOSION,1]
 FormName = Hisuian
@@ -116,7 +108,6 @@ Weight = 69.8
 Category = Ghost Flame
 Pokedex = Said to purify forsaken souls with its flames and guide them to the afterlife. Its form may have been influenced by the energy of a sacred mountain.
 Generation = 8
-RaidRanks = 3,4,5
 #-------------------------------
 [WOOPER,1]
 FormName = Paldean
@@ -132,8 +123,6 @@ Pokedex = After losing a territorial struggle, Wooper began living on land. The 
 Generation = 9
 Flags = InheritFormWithEverStone
 Evolutions = CLODSIRE,Level,20
-SpeciesSOS = WOOPER,CLODSIRE
-RaidRanks = 1,2
 #-------------------------------
 [QWILFISH,1]
 FormName = Hisuian
@@ -146,7 +135,6 @@ Pokedex = Fishers detest this troublesome Pokémon because it sprays poison from
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = OVERQWIL,LevelUseMoveCount,BARBBARRAGE
-RaidRanks = 2,3
 #-------------------------------
 [SNEASEL,1]
 FormName = Hisuian
@@ -161,7 +149,6 @@ Pokedex = Its sturdy, curved claws are ideal for traversing precipitous cliffs. 
 Generation = 8
 Flags = InheritFormWithEverStone,HasGenderedSprites
 Evolutions = SNEASLER,DayHoldItem,RAZORCLAW
-RaidRanks = 2,3
 #-------------------------------
 [DIALGA,1]
 FormName = Origin Forme
@@ -192,7 +179,6 @@ TutorMoves = AERIALACE,AIRSLASH,AVALANCHE,BLIZZARD,BODYSLAM,BRICKBREAK,BULLDOZE,
 Weight = 58.2
 Pokedex = Hard of heart and deft of blade, this rare form of Samurott's turbulent blows crash into foes like ceaseless pounding waves.
 Generation = 8
-RaidRanks = 3,4,5
 #-------------------------------
 [LILLIGANT,1]
 FormName = Hisuian
@@ -208,7 +194,6 @@ Shape = Bipedal
 Category = Spinning
 Pokedex = Its well-developed legs are the result of a life spent on mountains covered in deep snow. The scent it exudes from its flower crown heartens those in proximity.
 Generation = 8
-RaidRanks = 3,4
 #-------------------------------
 [BASCULIN,2]
 FormName = White-Striped
@@ -221,7 +206,6 @@ Pokedex = They live in frigid seas, forming schools and sharing food among thems
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = BASCULEGION,LevelRecoilDamage,294
-RaidRanks = 2,3
 #-------------------------------
 [BASCULIN,3]
 PokedexForm = 2
@@ -246,9 +230,7 @@ Color = White
 Category = Spiteful Fox
 Pokedex = A once-departed soul, returned to life. Derives power from resentment, which rises as energy atop its head. In this way, Zorua vents lingering malice.
 Generation = 8
-Evolutions = ZOROARK,LevelFormOne,30
 Flags = InheritFormWithEverStone
-RaidRanks = 1,2
 #-------------------------------
 [ZOROARK,1]
 FormName = Hisuian
@@ -261,7 +243,6 @@ Category = Baneful Fox
 Pokedex = With its disheveled white fur, it looks like an embodiment of death. Heedless of its own safety, Zoroark attacks its nemeses with an intense bitter energy.
 Generation = 8
 Flags = InheritFormWithEverStone
-RaidRanks = 3,4,5
 #-------------------------------
 [BRAVIARY,1]
 FormName = Hisuian
@@ -277,7 +258,6 @@ Color = White
 Category = Battle Cry
 Pokedex = Screaming a bloodcurdling battle cry, this huge and ferocious bird Pokémon goes out on the hunt. It blasts lakes with shock waves, then scoops up any floating prey.
 Generation = 8
-RaidRanks = 3,4,5
 #-------------------------------
 [SLIGGOO,1]
 FormName = Hisuian
@@ -291,7 +271,6 @@ Weight = 68.5
 Category = Snail
 Pokedex = A creature given to melancholy. I suspect its metallic shell developed as a result of the mucus on its skin reacting with the iron in Hisui's water.
 Generation = 8
-RaidRanks = 3,4
 #-------------------------------
 [GOODRA,1]
 FormName = Hisuian
@@ -305,7 +284,6 @@ Weight = 334.1
 Category = Shell Bunker
 Pokedex = Able to freely control the hardness of its metallic shell. It loathes solitude and is extremely clingy—it will fume and run riot if those dearest to it ever leave its side.
 Generation = 8
-RaidRanks = 5
 #-------------------------------
 [AVALUGG,1]
 FormName = Hisuian
@@ -318,7 +296,6 @@ Height = 1.4
 Weight = 262.4
 Pokedex = The armor of ice covering its lower jaw puts steel to shame and can shatter rocks with ease. This Pokémon barrels along steep mountain paths.
 Generation = 8
-RaidRanks = 4,5
 #-------------------------------
 [DECIDUEYE,1]
 FormName = Hisuian
@@ -330,7 +307,6 @@ TutorMoves = AERIALACE,AIRCUTTER,AIRSLASH,AURASPHERE,BATONPASS,BRAVEBIRD,BRICKBR
 Weight = 37.0
 Pokedex = Decidueye's feathers insulates the Pokémon against extreme cold. This is firm proof that evolution can be influenced by environment.
 Generation = 8
-RaidRanks = 3,4,5
 #-------------------------------
 [URSALUNA,1]
 FormName = Bloodmoon Ursaluna
@@ -344,7 +320,6 @@ Height = 2.7
 Weight = 333.0
 Pokedex = This special Ursaluna can see in the dark with its left eye and protects itself with mud that is as hard as iron.
 Generation = 9
-RaidRanks = 5
 #-------------------------------
 [BASCULEGION,3]
 FormName = Female
@@ -358,7 +333,6 @@ Abilities = OVERCOAT
 HiddenAbilities = OVERCOAT
 Shape = Quadruped
 Pokedex = A different guise from its feminine humanoid form. From the clouds, it descends upon those who treat any form of life with disrespect and punishes them.
-RaidRanks = 6
 #-------------------------------
 [OINKOLOGNE,1]
 FormName = Female
@@ -382,7 +356,6 @@ Height = 1.8
 Weight = 97.4
 Category = Hero
 Pokedex = This Pokémon's ancient genes have awakened. It is now so extraordinarily strong that it can easily lift a cruise ship with one fin.
-RaidRanks = 5
 #-------------------------------
 [MAUSHOLD,1]
 FormName = Family of Three
@@ -392,27 +365,22 @@ Pokedex = The little one just appeared one day. They all live together like a fa
 [REVAVROOM,1]
 Types = FIRE
 Abilities = SPEEDBOOST
-CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,2]
 Types = FAIRY
 Abilities = MISTYSURGE
-CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,3]
 Types = FIGHTING
 Abilities = STAMINA
-CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,4]
 Types = POISON
 Abilities = TOXICDEBRIS
-CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,5]
 Types = DARK
 Abilities = INTIMIDATE
-CallRateSOS = 0
 #-------------------------------
 [TATSUGIRI,1]
 FormName = Droopy Form
@@ -488,7 +456,6 @@ Flags = Legendary,TeraType_ROCK
 #-------------------------------
 [OGERPON,4]
 PokedexForm = 0
-Flags = Legendary,TeraType_GRASS
 #-------------------------------
 [OGERPON,5]
 FormName = Wellspring Mask
@@ -549,7 +516,6 @@ Height = 0.3
 Weight = 16.0
 Shape = Head
 Pokedex = The shell is made of crystallized Terastal energy. When struck by a move, this shell absorbs the move’s energy and transfers it to Terapagos.
-Flags = Legendary,TeraType_STELLAR
 #-------------------------------
 [TERAPAGOS,2]
 FormName = Stellar Form
@@ -567,7 +533,6 @@ FormName = Mega Raichu X
 MegaStone = RAICHUNITEX
 BaseStats = 60,135,95,110,90,95
 BaseExp = 293
-Abilities = SURGESURFER
 Height = 1.2
 Weight = 38.0
 Pokedex = It resembles an X as it flies through the air with 50 million volts of electricity sparking from its ears and forked tail.
@@ -578,7 +543,6 @@ FormName = Mega Raichu Y
 MegaStone = RAICHUNITEY
 BaseStats = 60,100,55,130,160,80
 BaseExp = 293
-Abilities = SURGESURFER
 Height = 1.0
 Weight = 26.0
 Pokedex = It fires bolts of electricity from the tip of its tail and from the spiky tufts of fur growing out of its temples. This electricity forms the letter Y.
@@ -591,6 +555,7 @@ Types = FAIRY,FLYING
 BaseStats = 95,80,93,70,135,110
 BaseExp = 292
 Abilities = MAGICBOUNCE
+HiddenAbilities = MAGICBOUNCE
 Height = 1.7
 Weight = 42.3
 Pokedex = It flies by using the power of moonlight to control gravity within a radius of over 32 feet around it.
@@ -602,6 +567,7 @@ MegaStone = VICTREEBELITE
 BaseStats = 80,125,85,70,135,95
 BaseExp = 295
 Abilities = INNARDSOUT
+HiddenAbilities = INNARDSOUT
 Height = 4.5
 Weight = 125.5
 Pokedex = The volume of this Pokémon's acid has increased due to Mega Evolution, filling its mouth. If it's not careful, the acid will overflow and spill out.
@@ -613,6 +579,7 @@ MegaStone = STARMINITE
 BaseStats = 60,100,105,120,130,105
 BaseExp = 232
 Abilities = HUGEPOWER
+HiddenAbilities = HUGEPOWER
 Height = 2.3
 Pokedex = Its movements have become more humanlike. Whether it's simply trying to communicate or wants to supplant humanity is unclear.
 Generation = 9
@@ -634,6 +601,7 @@ Types = GRASS,FAIRY
 BaseStats = 80,92,115,80,143,115
 BaseExp = 313
 Abilities = MEGASOL
+HiddenAbilities = MEGASOL
 Height = 2.4
 Weight = 201.0
 Pokedex = This Pokémon can fire a tremendously powerful Solar Beam from its four flowers. Another name for this is Mega Sol Cannon.
@@ -646,6 +614,7 @@ Types = WATER,DRAGON
 BaseStats = 85,160,125,78,89,93
 BaseExp = 315
 Abilities = DRAGONIZE
+HiddenAbilities = DRAGONIZE
 Weight = 108.8
 Category = Double Jaw
 Pokedex = With its arms and hoodlike fin, this Pokémon forms a gigantic set of jaws with a bite 10 times as powerful as Mega Feraligatr's actual jaws.
@@ -657,6 +626,7 @@ MegaStone = SKARMORITE
 BaseStats = 65,140,110,110,40,100
 BaseExp = 213
 Abilities = STALWART
+HiddenAbilities = STALWART
 Weight = 40.4
 Pokedex = It flies faster than the speed of sound. After whipping up shock waves to send enemies flying, it finishes them off with its talons.
 Generation = 9
@@ -667,7 +637,7 @@ MegaStone = CHIMECHITE
 Types = PSYCHIC,STEEL
 BaseStats = 75,50,110,65,135,120
 BaseExp = 209
-Abilities = LEVITATE
+HiddenAbilities = LEVITATE
 Height = 1.2
 Weight = 8.0
 Pokedex = It vibrates its entire body to attack in all directions using sound waves. Any who hear the vibrations get so confused, they forget who they are.
@@ -724,6 +694,7 @@ MegaStone = FROSLASSITE
 BaseStats = 70,80,70,120,140,100
 BaseExp = 218
 Abilities = SNOWWARNING
+HiddenAbilities = SNOWWARNING
 Height = 2.6
 Weight = 29.6
 Pokedex = This Pokémon can use eerie cold air imbued with ghost energy to freeze even insubstantial things, such as flames or the wind.
@@ -734,7 +705,6 @@ FormName = Mega Heatran
 MegaStone = HEATRANITE
 BaseStats = 91,120,106,67,175,141
 BaseExp = 350
-Abilities = FLASHFIRE
 Height = 2.8
 Weight = 570.0
 Pokedex = It's said that if it goes all out, it can heat its body up to temperatures over 1.8 million degrees Fahrenheit. This heat keeps enemies at bay.
@@ -757,6 +727,7 @@ MegaStone = EMBOARITE
 BaseStats = 110,148,75,75,110,110
 BaseExp = 314
 Abilities = MOLDBREAKER
+HiddenAbilities = MOLDBREAKER
 Height = 1.8
 Weight = 180.3
 Pokedex = Brandishing a blazing flame shaped like a serpentine spear, it rushes in to rescue its imperiled allies.
@@ -767,7 +738,8 @@ FormName = Mega Excadrill
 MegaStone = EXCADRITE
 BaseStats = 110,165,100,103,65,65
 BaseExp = 228
-Abilities = UNSEENFIST
+Abilities = PIERCINGDRILL
+HiddenAbilities = PIERCINGDRILL
 Height = 0.9
 Weight = 60.0
 Pokedex = If this Pokémon brings its arms and head together to form a streamlined shape and spins at high speeds, it can destroy anything.
@@ -799,7 +771,6 @@ FormName = Mega Eelektross
 MegaStone = EELEKTROSSITE
 BaseStats = 85,145,80,80,135,90
 BaseExp = 308
-Abilities = LEVITATE
 Height = 3.0
 Weight = 180.0
 Pokedex = It now generates 10 times the electricity it did before Mega Evolving. It discharges this electricity from its false Eelektrik, which are made of mucus.
@@ -822,6 +793,7 @@ MegaStone = GOLURKITE
 BaseStats = 89,159,105,55,70,105
 BaseExp = 219
 Abilities = UNSEENFIST
+HiddenAbilities = UNSEENFIST
 Height = 4.0
 Pokedex = The energy within Golurk has been stimulated by Mega Evolution. The Pokémon could explode at any moment.
 Generation = 9
@@ -841,6 +813,7 @@ MegaStone = DELPHOXITE
 BaseStats = 75,69,72,134,159,125
 BaseExp = 317
 Abilities = LEVITATE
+HiddenAbilities = LEVITATE
 Pokedex = It wields flaming branches to dazzle its opponents before incinerating them with a huge fireball.
 Generation = 9
 #-------------------------------
@@ -870,6 +843,7 @@ UnmegaForm = 5
 BaseStats = 74,85,87,102,155,148
 BaseExp = 293
 Abilities = FAIRYAURA
+HiddenAbilities = FAIRYAURA
 Weight = 100.8
 Pokedex = The Eternal Flower has absorbed all the energy from Mega Evolution. The flower now attacks enemies on its own.
 Generation = 9
@@ -880,6 +854,7 @@ MegaStone = MEOWSTICITE
 BaseStats = 74,48,76,124,143,101
 BaseExp = 213
 Abilities = TRACE
+HiddenAbilities = TRACE
 Height = 0.8
 Weight = 10.1
 Category = Second Sight
@@ -892,7 +867,8 @@ MegaStone = MEOWSTICITE
 UnmegaForm = 1
 BaseStats = 74,48,76,124,143,101
 BaseExp = 213
-HiddenAbilities = TRACE
+Abilities = TRACE
+HiddenAbilities = COMPETITIVE
 Height = 0.8
 Weight = 10.1
 Generation = 9
@@ -937,6 +913,7 @@ MegaStone = HAWLUCHANITE
 BaseStats = 78,137,100,118,74,93
 BaseExp = 225
 Abilities = NOGUARD
+HiddenAbilities = NOGUARD
 Height = 1.0
 Weight = 25.0
 Pokedex = Mega Evolution has pumped up all its muscles. Hawlucha flexes to show off its strength.
@@ -977,6 +954,7 @@ MegaStone = CRABOMINITE
 BaseStats = 97,157,122,33,62,107
 BaseExp = 217
 Abilities = IRONFIST
+HiddenAbilities = IRONFIST
 Height = 2.6
 Weight = 252.8
 Pokedex = It can pulverize reinforced concrete with a light swing of one of its fists, each of which is covered in a thick layer of ice.
@@ -1000,6 +978,7 @@ MegaStone = DRAMPANITE
 BaseStats = 78,85,110,36,160,116
 BaseExp = 220
 Abilities = BERSERK
+HiddenAbilities = BERSERK
 Weight = 240.5
 Category = Imposing
 Pokedex = Drampa's cells have been invigorated, allowing it to regain its youth. It manipulates the atmosphere to summon storms.
@@ -1010,7 +989,6 @@ FormName = Mega Magearna
 MegaStone = MAGEARNITE
 BaseStats = 80,125,115,95,170,115
 BaseExp = 350
-Abilities = SOULHEART
 Height = 1.3
 Weight = 248.1
 Pokedex = This is Magearna once a previously hidden mode activates. The emotions Magearna had begun to feel now hide away as it fells foe after foe.
@@ -1022,7 +1000,6 @@ MegaStone = MAGEARNITE
 UnmegaForm = 1
 BaseStats = 80,125,115,95,170,115
 BaseExp = 350
-Abilities = SOULHEART
 Height = 1.3
 Weight = 248.1
 Color = Red
@@ -1034,7 +1011,6 @@ FormName = Mega Zeraora
 MegaStone = ZERAORITE
 BaseStats = 88,157,75,153,147,80
 BaseExp = 350
-Abilities = VOLTABSORB
 Pokedex = It stores up 10 lightning strikes' worth of electricity. When it stops limiting itself, it's in the strongest class of electric Pokémon.
 Generation = 9
 #-------------------------------
@@ -1052,13 +1028,13 @@ Generation = 9
 [SCOVILLAIN,1]
 FormName = Mega Scovillain
 MegaStone = SCOVILLAINITE
-BaseStats = 65,118,85,95,138,85
-BaseExp = 292
+BaseStats = 65,138,85,75,138,85
+BaseExp = 220
 Abilities = SPICYSPRAY
+HiddenAbilities = SPICYSPRAY
 Height = 1.2
 Weight = 22.0
 Pokedex = Mega Evolution has dialed up this Pokémon's spiciness. It swings its "necktie" around to wallop its foes.
-Generation = 9
 #-------------------------------
 [GLIMMORA,1]
 FormName = Mega Glimmora
@@ -1066,6 +1042,7 @@ MegaStone = GLIMMORANITE
 BaseStats = 83,90,105,101,150,96
 BaseExp = 234
 Abilities = ADAPTABILITY
+HiddenAbilities = ADAPTABILITY
 Height = 2.8
 Weight = 77.0
 Pokedex = Glimmora's petals-now larger and separated from its main body-rotate around it to provide defense while scattering poisonous fragments.
@@ -1109,6 +1086,5 @@ FormName = Mega Baxcalibur
 MegaStone = BAXCALIBRITE
 BaseStats = 115,175,117,87,105,101
 BaseExp = 350
-Abilities = THERMALEXCHANGE
 Weight = 315.0
 Pokedex = Baxcalibur's dorsal blade has grown even more massive thanks to Mega Evolution. This Pokémon fires beams from the hilt at its solar plexus.

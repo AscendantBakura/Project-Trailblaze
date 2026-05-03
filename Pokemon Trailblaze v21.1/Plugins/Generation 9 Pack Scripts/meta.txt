@@ -1,11 +1,37 @@
 Name = Generation 9 Pack
-Version = 3.3.4
+Version = 3.3.6
 Essentials = 21.1
 Requires = v21.1 Hotfixes,1.0.9
 Website = https://www.eeveeexpo.com/threads/5817/
 Credits = Caruban
 
 # Change logs
+#############################################
+# 3.3.6
+#############################################
+# - Added the remaining mega form icon sprites.
+# - Added Mega Sol’s damage modifier to bypass weather-based defensive buffs (Rock-type Sp. Def in Sandstorm and Ice-type Defense in Snow/Hail).
+# - Fixed a missing comma within the GEN_9_BASE_ABILITY_RATINGS data.
+# - Updated Champions Piercing Drill and Unseen Fist to ensure they trigger the secondary effects of a target's protection.
+#############################################
+# 3.3.5
+#############################################
+# - Added 4 new abilities: Mega Sol, Dragonize, Piercing Drill, and Spicy Spray.
+# - Added optional PBS files for Champions-related changes.
+# - Added optional PBS data and move function for PLZA Dark Void.
+# - Added a new toggleable setting, CHAMPIONS_MECHANICS, which implements the following changes:
+#   - Freeze: Lasts a maximum of 3 turns with a 25% chance to thaw each turn.
+#   - Paralysis: Reduced "fully paralyzed" chance to 12.5%.
+#   - Sleep: Lasts a maximum of 3 turns with a 33% chance to wake up on the second turn.
+#   - Healer Ability: 50% chance to cure an ally's status condition.
+#   - Unseen Fist & Piercing Drill Abilities: Contact moves now deal only 25% damage against protections.
+#   - Fake Out & First Impression: Become unselectable after the Pokémon's first turn on the field.
+#   - Rapid Spin & Knock Off: Secondary effects now trigger even if the user faints during the attack.
+#   - Freeze-Dry: Removed the chance to freeze the target (0% chance).
+#   - Toxic Thread: Lowers the target's Speed stat by two stages.
+#   - Salt Cure: Reduced damage to 1/16 max HP (or 1/8 for Water and Steel types) at the end of each turn.
+# - Added a new toggleable setting, HIDDEN_POWER_USE_PLA_MECHANICS, allowing Hidden Power to function similarly to Judgment when used with the Legend Plate.
+# - Added the last missing battle sprites from Pokémon Legends: Z-A.
 #############################################
 # 3.3.4
 #############################################
