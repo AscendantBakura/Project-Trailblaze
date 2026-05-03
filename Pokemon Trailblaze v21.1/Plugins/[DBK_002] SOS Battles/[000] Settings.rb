@@ -13,7 +13,7 @@ module Settings
   # When true, wild Pokemon may only SOS call once per battle. Wild Pokemon will
   # make unlimited calls if set to false, or after an Adrenaline Orb is used.
   #-----------------------------------------------------------------------------
-  LIMIT_SOS_CALLS_TO_ONE = true
+  LIMIT_SOS_CALLS_TO_ONE = false
   
   #-----------------------------------------------------------------------------
   # This may be used to increase the odds of shiny Pokemon appearing during an
