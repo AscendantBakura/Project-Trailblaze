@@ -15931,7 +15931,7 @@ RaidRanks = 3,4,5
 [ZORUA]
 Name = Zorua
 Types = DARK
-BaseStats = 40,65,40,65,80,40
+BaseStats = 50,75,55,85,80,55
 GenderRatio = FemaleOneEighth
 GrowthRate = Parabolic
 BaseExp = 66
@@ -15958,7 +15958,7 @@ RaidRanks = 1,2
 [ZOROARK]
 Name = Zoroark
 Types = DARK
-BaseStats = 60,105,60,105,120,60
+BaseStats = 60,115,70,105,120,70
 GenderRatio = FemaleOneEighth
 GrowthRate = Parabolic
 BaseExp = 179
@@ -17255,7 +17255,7 @@ RaidRanks = 3,4
 [MIENFOO]
 Name = Mienfoo
 Types = FIGHTING
-BaseStats = 60,85,50,65,55,50
+BaseStats = 60,85,65,75,55,60
 GenderRatio = Female50Percent
 GrowthRate = Parabolic
 BaseExp = 70
@@ -17283,7 +17283,7 @@ RaidRanks = 1,2,3
 [MIENSHAO]
 Name = Mienshao
 Types = FIGHTING
-BaseStats = 65,125,60,105,95,60
+BaseStats = 65,125,70,105,105,70
 GenderRatio = Female50Percent
 GrowthRate = Parabolic
 BaseExp = 179
@@ -18812,7 +18812,7 @@ RaidRanks = 3,4,5
 [ESPURR]
 Name = Espurr
 Types = PSYCHIC
-BaseStats = 62,48,54,68,63,60
+BaseStats = 62,48,64,78,83,65
 GenderRatio = Female50Percent
 GrowthRate = Medium
 BaseExp = 71
@@ -18841,7 +18841,7 @@ RaidRanks = 1,2
 Name = Meowstic
 FormName = Male
 Types = PSYCHIC
-BaseStats = 74,48,76,104,83,81
+BaseStats = 74,48,76,118,123,101
 GenderRatio = Female50Percent
 GrowthRate = Medium
 BaseExp = 163
