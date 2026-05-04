@@ -159,7 +159,7 @@ MidbattleHandlers.add(:midbattle_global, :raid_battle,
         battle.moneyGain        = false
         battle.sendToBoxes      = 1
         battle.disablePokeBalls = true
-        battle.sosBattle        = false if defined?(battle.sosBattle)
+        battle.sosBattle        = true if defined?(battle.sosBattle)
         battle.totemBattle      = nil   if defined?(battle.totemBattle)
         foe.damageThreshold     = 50
 		PBDebug.log("[Midbattle Global] Raid battle properties initiated")

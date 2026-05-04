@@ -419,3 +419,19 @@ BattleBack = cave2
 Environment = Cave
 Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 #-------------------------------
+[109]   # Boss Room
+Name = Deep Delve Boss Room
+MapPosition = 0,16,10
+Dungeon = false
+BattleBack = cave2
+Environment = Cave
+#-------------------------------
+[110]   # Reset Dungeon Floor
+Name = Deep Delve Between spaces
+Bicycle = false
+MapPosition = 0,16,10
+Dungeon = true
+BattleBack = cave2
+Environment = Cave
+Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
+#-------------------------------
