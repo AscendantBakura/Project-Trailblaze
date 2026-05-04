@@ -39,3 +39,11 @@ UIHandlers.add(:pokedex, :page_forms, {
   "order"     => 30,
   "layout"    => proc { |species, scene| scene.drawPageForms }
 })
+
+# Moves page.
+UIHandlers.add(:pokedex, :page_moves, {
+  "name"      => "MOVES",
+  "suffix"    => "moves",
+  "order"     => 40,
+  "layout"    => proc { |species, scene| scene.drawPageMoves }
+})

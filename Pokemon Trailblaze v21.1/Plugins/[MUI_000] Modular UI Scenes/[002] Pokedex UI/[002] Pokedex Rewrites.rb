@@ -181,4 +181,20 @@ class PokemonPokedexInfo_Scene
     end
     return @index
   end
+
+  #-----------------------------------------------------------------------------
+  # Creating the moves page
+  #-----------------------------------------------------------------------------
+  def drawPageMoves
+    overlay = @sprites["overlay"].bitmap
+    overlay.clear
+    
+    moves = pbGetMoves(@species, @form)
+    if moves.empty?
+      drawFormattedTextEx(overlay, 16, 32, overlay.width - 32, _INTL("This Pokémon doesn't have any moves."))
+    else
+      memo = moves.join("\n")
+      drawFormattedTextEx(overlay, 16, 32, overlay.width - 32, memo)
+    end
+   end
 end
