@@ -330,3 +330,14 @@ Land,21
     5,DREEPY,11,14
     5,GREAVARD,11,14
     5,POLTCHAGEIST,11,14
+#-------------------------------
+[108]   # Dungeon Test
+Cave,5
+    20,ZUBAT,14,16
+    20,MAGNEMITE,14,17
+    10,DRILBUR,14,15
+    10,DIGLETT,14,15
+    15,NOSEPASS,13,14
+    10,GEODUDE,13,15
+    10,MAWILE,14,16
+    5,CARBINK,14,16

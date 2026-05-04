@@ -409,3 +409,13 @@ TrainerVictoryBGM = V Theme - Sumes
 BattleBack = elite4
 TrainerBattleBGM = Tanuki Twist - Sumes
 TrainerVictoryBGM = V Theme - Sumes
+#-------------------------------
+[108]   # Dungeon Test
+Name = Deep Delve
+Bicycle = false
+MapPosition = 0,16,10
+Dungeon = true
+BattleBack = cave2
+Environment = Cave
+Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
+#-------------------------------

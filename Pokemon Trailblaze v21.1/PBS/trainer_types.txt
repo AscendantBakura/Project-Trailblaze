@@ -10,6 +10,26 @@ Name = Pokémon Trainer
 Gender = Female
 BaseMoney = 60
 #-------------------------------
+[POKEMONTRAINER_Red1]
+Name = Pokémon Trainer
+Gender = Male
+BaseMoney = 60
+#-------------------------------
+[POKEMONTRAINER_Leaf1]
+Name = Pokémon Trainer
+Gender = Female
+BaseMoney = 60
+#-------------------------------
+[POKEMONTRAINER_Red2]
+Name = Pokémon Trainer
+Gender = Male
+BaseMoney = 60
+#-------------------------------
+[POKEMONTRAINER_Leaf2]
+Name = Pokémon Trainer
+Gender = Female
+BaseMoney = 60
+#-------------------------------
 [POKEMONTRAINER_Brendan]
 Name = Pokémon Trainer
 Gender = Male

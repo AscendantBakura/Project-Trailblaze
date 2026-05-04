@@ -31,3 +31,43 @@ SurfCharset = girl_surf
 DiveCharset = girl_surf
 FishCharset = girl_fish_offset
 SurfFishCharset = girl_fish_offset
+#-------------------------------
+[3]
+TrainerType = POKEMONTRAINER_Red1
+WalkCharset = trainer_POKEMONTRAINER_Red_1
+RunCharset = boy_run
+CycleCharset = boy_bike
+SurfCharset = boy_surf
+DiveCharset = boy_surf
+FishCharset = boy_fish_offset
+SurfFishCharset = boy_fish_offset
+#-------------------------------
+[4]
+TrainerType = POKEMONTRAINER_Leaf1
+WalkCharset = trainer_POKEMONTRAINER_Leaf_1
+RunCharset = girl_run
+CycleCharset = girl_bike
+SurfCharset = girl_surf
+DiveCharset = girl_surf
+FishCharset = girl_fish_offset
+SurfFishCharset = girl_fish_offset
+#-------------------------------
+[5]
+TrainerType = POKEMONTRAINER_Red2
+WalkCharset = trainer_POKEMONTRAINER_Red_2
+RunCharset = boy_run
+CycleCharset = boy_bike
+SurfCharset = boy_surf
+DiveCharset = boy_surf
+FishCharset = boy_fish_offset
+SurfFishCharset = boy_fish_offset
+#-------------------------------
+[6]
+TrainerType = POKEMONTRAINER_Leaf2
+WalkCharset = trainer_POKEMONTRAINER_Leaf_2
+RunCharset = girl_run
+CycleCharset = girl_bike
+SurfCharset = girl_surf
+DiveCharset = girl_surf
+FishCharset = girl_fish_offset
+SurfFishCharset = girl_fish_offset
