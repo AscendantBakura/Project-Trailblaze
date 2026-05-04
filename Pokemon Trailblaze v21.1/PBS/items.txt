@@ -6669,3 +6669,22 @@ Pocket = 1
 Price = 1000
 Flags = Fling_30
 Description = A small green shard. It appears to be from some sort of implement made long ago.
+#-------------------------------
+[MIENSHAOITE]
+Name = Mienshaoite
+NamePlural = Mienshaoites
+Pocket = 1
+Price = 0
+BPPrice = 50
+Flags = MegaStone,Fling_80
+Description = One of a variety of mysterious Mega Stones. Have Mienshao hold it, and it will be able to Mega Evolve.
+#-------------------------------
+[ZOROARKITEH]
+Name = Zoroarkite H
+NamePlural = Zoroarkites H
+Pocket = 1
+Price = 0
+BPPrice = 50
+Flags = MegaStone,Fling_80
+Description = One of a variety of mysterious Mega Stones. Have Hisuian Zoroark hold it, and it will be able to Mega Evolve.
+#-------------------------------
