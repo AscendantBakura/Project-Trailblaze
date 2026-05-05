@@ -16,7 +16,6 @@ class Battle::Battler
   def hasTera?(check_available = true)
     return false if shadowPokemon?
     return false if wild? && @battle.wildBattleMode != :tera
-    return false if @battle.raidBattle? && @battle.raidRules[:style] != :Tera
     return false if @pokemon.hasTerastalForm? && @effects[PBEffects::Transform]
     return false if @effects[PBEffects::TransformPokemon]&.hasTerastalForm?
     return false if !getActiveState.nil?

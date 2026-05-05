@@ -154,7 +154,6 @@ class Battle::Battler
   def hasMega?
     return false if shadowPokemon? || @effects[PBEffects::Transform]
     return false if wild? && @battle.wildBattleMode != :mega
-    return false if @battle.raidBattle? && @battle.raidRules[:style] != :Basic
     return false if !getActiveState.nil?
     return false if hasEligibleAction?(:primal, :zmove, :ultra, :zodiac)
     return @pokemon&.hasMegaForm?
