@@ -11,8 +11,11 @@ class PokemonTrainerCard_Scene
   
   alias animtrainer_pbDrawTrainerCardFront pbDrawTrainerCardFront
   def pbDrawTrainerCardFront
-    @sprites["trainer"].ox = 0
-    @sprites["trainer"].oy = 0
+    @sprites["trainer"].ox = @sprites["trainer"].bitmap.width / 2
+    @sprites["trainer"].oy = @sprites["trainer"].bitmap.height
+    @sprites["trainer"].x = 399
+    @sprites["trainer"].y = 283
+    @sprites["trainer"].play if @sprites["trainer"].respond_to?(:play)
     animtrainer_pbDrawTrainerCardFront
   end
 end
