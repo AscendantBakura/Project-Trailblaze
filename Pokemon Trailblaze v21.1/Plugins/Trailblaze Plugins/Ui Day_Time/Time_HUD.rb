@@ -3,8 +3,8 @@ module TrailblazeTimeHUD
 	DAY_PATH   = ASSET_PATH + "DAY ICONS/"
 	TIME_PATH  = ASSET_PATH + "TIME ICONS/"
 
-	# If we want to be able to toggle the HUD on/off, set this variable to the ID of a game variable that controls its visibility (currently set to time passed variable by default)
-	SHOW_WHEN_VAR = 130
+	# If we want to be able to toggle the HUD on/off, set this variable to the ID of a game switch that controls its visibility (currently set to time passed switch by default)
+	SHOW_WHEN_SWITCH = 183
 
 	# Change if we change or move the switches
 	DAY_SWITCHES = {
@@ -42,11 +42,11 @@ module TrailblazeTimeHUD
 
 	module_function
 
-	# Returns whether the HUD should be shown based on multiple factors (currently just whether the specified variable is on, but could be expanded in the future)
+	# Returns whether the HUD should be shown based on multiple factors (currently just whether the specified switch is on, but could be expanded in the future)
 	def initialized?
-		return false if !$game_variables
-		return false if SHOW_WHEN_VAR < 0
-		return $game_variables[SHOW_WHEN_VAR].to_i > 0
+		return false if !$game_switches
+		return false if !SHOW_WHEN_SWITCH
+		return $game_switches[SHOW_WHEN_SWITCH]
 	end
 
 	# Eating crayons and drawing stuff on the screen
