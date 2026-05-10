@@ -163,7 +163,7 @@ module QuestModule
   Quest13 = {
     :ID => "13",
     :Name => "Get Your Starter",
-    :QuestGiver => "The Professor",
+    :QuestGiver => "Professor",
     :Stage1 => "Speak to the Professor.",
     :Stage2 => "Seriously, talk to the Professor!",
     :Location1 => "In the City",
@@ -171,4 +171,13 @@ module QuestModule
     :RewardString => "A Pokemon!"
   }
 
+ Quest14 = {
+    :ID => "14",
+    :Name => "Get Your Starter",
+    :QuestGiver => "Me",
+    :Stage1 => "Let my Partner out of their ball.",
+    :Location1 => "My Room.",
+    :QuestDescription => "Wake up partner!",
+    :RewardString => "A Pokemon!"
+  }
 end
