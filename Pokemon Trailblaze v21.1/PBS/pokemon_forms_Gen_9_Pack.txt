@@ -1086,5 +1086,16 @@ FormName = Mega Baxcalibur
 MegaStone = BAXCALIBRITE
 BaseStats = 115,175,117,87,105,101
 BaseExp = 350
+Abilities = THERMALEXCHANGE
 Weight = 315.0
 Pokedex = Baxcalibur's dorsal blade has grown even more massive thanks to Mega Evolution. This Pokémon fires beams from the hilt at its solar plexus.
+#-------------------------------
+[ZOROARK,3]
+FormName = Mega Hisuian Zoroark
+MegaStone = ZOROARKITEH
+UnmegaForm = 1
+BaseStats = 55,105,85,135,155,95
+BaseExp = 350
+Abilities = BERSERK
+Weight = 315.0
+Pokedex = Due to its intense bitter energy, Zoroark's hair became more disheveled and it will target all its nemeses with fury.
