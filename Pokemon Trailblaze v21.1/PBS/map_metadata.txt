@@ -406,13 +406,28 @@ WildVictoryBGM = V Theme - Sumes
 TrainerVictoryBGM = V Theme - Sumes
 #-------------------------------
 [083]   # Gym Leader Room
+Name = Gym Leader Room
 BattleBack = elite4
 TrainerBattleBGM = Tanuki Twist - Sumes
 TrainerVictoryBGM = V Theme - Sumes
 #-------------------------------
+[088]   # Campus Grounds
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+#-------------------------------
+[094]   # Classroom
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+#-------------------------------
+[096]   # Campus Main Hall
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+#-------------------------------
+[105]   # Campus Main Hall F2
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+#-------------------------------
+[107]   # Player Home Town
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+#-------------------------------
 [108]   # Dungeon Test
 Name = Deep Delve
-Bicycle = false
 MapPosition = 0,16,10
 Dungeon = true
 BattleBack = cave2
@@ -422,16 +437,16 @@ Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 [109]   # Boss Room
 Name = Deep Delve Boss Room
 MapPosition = 0,16,10
-Dungeon = false
 BattleBack = cave2
 Environment = Cave
 #-------------------------------
 [110]   # Reset Dungeon Floor
 Name = Deep Delve Between spaces
-Bicycle = false
 MapPosition = 0,16,10
 Dungeon = true
 BattleBack = cave2
 Environment = Cave
 Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 #-------------------------------
+[114]   # Dorms
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
