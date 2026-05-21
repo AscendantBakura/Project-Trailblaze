@@ -268,8 +268,8 @@ module Input
           $PokemonSystem.game_control_code("Scroll Down")
         when Input::SPECIAL # F, F5, Tab
           $PokemonSystem.game_control_code("Ready Menu")
-        # when Input::AUX1
-        #   $PokemonSystem.game_control_code("Example A")
+        when Input::AUX1
+          $PokemonSystem.game_control_code("Turbo Toggle")
         # when Input::AUX2
         #   $PokemonSystem.game_control_code("Example B")
         # when Input::AUX3
@@ -365,7 +365,8 @@ module Keys
       ControlConfig.multiple_new("Menu", ["Z", "Shift", "Button X"]) +
       ControlConfig.multiple_new("Scroll Up", ["A", "Left Shoulder"]) +
       ControlConfig.multiple_new("Scroll Down", ["S", "Right Shoulder"]) +
-      ControlConfig.multiple_new("Ready Menu", ["D","Button Y"]) 
+      ControlConfig.multiple_new("Ready Menu", ["D","Button Y"]) +
+      ControlConfig.multiple_new("Turbo Toggle", ["E"])
     )
   end 
 
@@ -382,7 +383,8 @@ module Keys
       ControlConfig.multiple_new("Menu", ["Z", "Shift"]) +
       ControlConfig.multiple_new("Scroll Up", ["A"]) +
       ControlConfig.multiple_new("Scroll Down", ["S"]) +
-      ControlConfig.multiple_new("Ready Menu", ["D"]) 
+      ControlConfig.multiple_new("Ready Menu", ["D"]) +
+      ControlConfig.multiple_new("Turbo Toggle", ["E"])
     )
   end 
 
@@ -601,6 +603,13 @@ class PokemonSystem
   attr_writer :game_controls
   def game_controls
     @game_controls = Keys.default_controls if !@game_controls
+
+    existing_actions = @game_controls.map { |c| c.control_action }
+    missing_defaults = Keys.default_controls.find_all do |control|
+      !existing_actions.include?(control.control_action)
+    end
+    @game_controls.concat(missing_defaults.map { |c| c.clone }) if missing_defaults.length > 0
+
     return @game_controls
   end
 
