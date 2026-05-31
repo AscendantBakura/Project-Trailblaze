@@ -432,6 +432,10 @@ MapPosition = 0,16,10
 Dungeon = true
 BattleBack = cave2
 Environment = Cave
+WildBattleBGM = XD 03 Battle SIM
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+WildVictoryBGM = V Theme - Sumes
+TrainerVictoryBGM = V Theme - Sumes
 Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 #-------------------------------
 [109]   # Boss Room
@@ -451,11 +455,15 @@ Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 [114]   # Dorms
 TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
 #-------------------------------
-[121]   # Rasperry Berry Volcano
+[121]   # Raspberry Volcano
 Name = Raspberry Volcano
 MapPosition = 0,16,10
 Dungeon = true
 BattleBack = Volcano
 Environment = Cave
+WildBattleBGM = XD 03 Battle SIM
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+WildVictoryBGM = V Theme - Sumes
+TrainerVictoryBGM = V Theme - Sumes
 Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 #-------------------------------
