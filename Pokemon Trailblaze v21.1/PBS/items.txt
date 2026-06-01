@@ -6688,3 +6688,12 @@ BPPrice = 50
 Flags = MegaStone,Fling_80
 Description = One of a variety of mysterious Mega Stones. Have Hisuian Zoroark hold it, and it will be able to Mega Evolve.
 #-------------------------------
+[ZOROARKITE]
+Name = Zoroarkite 
+NamePlural = Zoroarkites 
+Pocket = 1
+Price = 0
+BPPrice = 50
+Flags = MegaStone,Fling_80
+Description = One of a variety of mysterious Mega Stones. Have Unovan Zoroark hold it, and it will be able to Mega Evolve.
+#-------------------------------
