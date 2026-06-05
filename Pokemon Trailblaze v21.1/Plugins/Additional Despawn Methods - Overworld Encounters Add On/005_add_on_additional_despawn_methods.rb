@@ -11,7 +11,7 @@
 
 module VisibleEncounterSettings
   #------------(SCREEN DISTANCE DESPAWNING)-------------------
-  REMOVE_DISTANCED = false #default false
+  REMOVE_DISTANCED = true #default false
   # this is used if you want a mechanic that removes PokeEvents when
   # distancing from them
   #false - means nothing happens
@@ -29,7 +29,7 @@ module VisibleEncounterSettings
   #------------------------------------------------------------
   
   #------------(SECONDS PROLONGED DESPAWNING)-------------------
-  REMOVE_PROLONGED = false #default false
+  REMOVE_PROLONGED = true #default false
   # this is used if you want a mechanic that removes PokeEvents when
   # being a prolonged time active
   #false - means nothing happens

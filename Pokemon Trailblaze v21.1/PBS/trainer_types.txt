@@ -55,16 +55,6 @@ Name = Aroma Lady
 Gender = Female
 BaseMoney = 32
 #-------------------------------
-[BEAUTY]
-Name = Beauty
-Gender = Female
-BaseMoney = 56
-#-------------------------------
-[BIKER]
-Name = Biker
-Gender = Male
-BaseMoney = 32
-#-------------------------------
 [BIRDKEEPER]
 Name = Bird Keeper
 Gender = Male
@@ -111,11 +101,6 @@ SkillLevel = 32
 Name = Gentleman
 Gender = Male
 BaseMoney = 72
-#-------------------------------
-[HIKER]
-Name = Hiker
-Gender = Male
-BaseMoney = 32
 #-------------------------------
 [JUGGLER]
 Name = Juggler
@@ -178,11 +163,6 @@ Name = Tamer
 Gender = Male
 BaseMoney = 40
 #-------------------------------
-[BLACKBELT]
-Name = Black Belt
-Gender = Male
-BaseMoney = 32
-#-------------------------------
 [CRUSHGIRL]
 Name = Crush Girl
 Gender = Female
@@ -237,18 +217,6 @@ BaseMoney = 32
 Name = Psychic
 Gender = Female
 BaseMoney = 32
-#-------------------------------
-[SWIMMER_M]
-Name = Swimmer
-Gender = Male
-BaseMoney = 16
-SkillLevel = 32
-#-------------------------------
-[SWIMMER_F]
-Name = Swimmer
-Gender = Female
-BaseMoney = 16
-SkillLevel = 32
 #-------------------------------
 [SWIMMER2_M]
 Name = Swimmer
@@ -434,3 +402,4 @@ BaseMoney = 100
 SkillLevel = 90
 BattleBGM = XD 08 Normal Battle
 VictoryBGM = V Theme - Sumes
+SpriteScale = 1

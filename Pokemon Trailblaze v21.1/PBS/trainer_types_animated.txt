@@ -151,6 +151,11 @@ Name = Acetrainer F
 Gender = Female
 BaseMoney = 60
 #-------------------------------
+[BEAUTY]
+Name = Beauty
+Gender = Female
+BaseMoney = 56
+#-------------------------------
 [POKEDUDE]
 Name = Poké Dude
 Gender = Male
@@ -175,16 +180,22 @@ BaseMoney = 48
 ShadowXY = -1,-8
 #-------------------------------
 [BACKPACKER_M]
-Name = Backpacker
+Name = Backpacker M
 Gender = Male
 BaseMoney = 32
 ShadowXY = 0,-3
 #-------------------------------
 [BACKPACKER_F]
-Name = Backpacker
+Name = Backpacker F
 Gender = Female
 BaseMoney = 32
 ShadowXY = 0,-3
+#-------------------------------
+[BLACKBELT]
+Name = Black Belt
+Gender = Male
+BaseMoney = 32
+ShadowXY = 0,-5
 #-------------------------------
 [POKEFAN_M]
 Name = Poké Fan
@@ -358,6 +369,12 @@ Gender = Male
 BaseMoney = 56
 ShadowXY = 0,-2
 #-------------------------------
+[BIKER]
+Name = Biker
+Gender = Male
+BaseMoney = 32
+ShadowXY = 0,-5
+#-------------------------------
 [HOOLIGANS]
 Name = Hooligans
 Gender = Unknown
@@ -379,6 +396,18 @@ ShadowXY = 0,-2
 [DANCER]
 Name = Dancer
 Gender = Male
+BaseMoney = 24
+ShadowXY = 0,-14
+#-------------------------------
+[SWIMMER_M]
+Name = Swimmer M
+Gender = Male
+BaseMoney = 24
+ShadowXY = 0,-14
+#-------------------------------
+[SWIMMER_F]
+Name = SWIMMER_F
+Gender = Female
 BaseMoney = 24
 ShadowXY = 0,-14
 #-------------------------------
@@ -406,9 +435,21 @@ Gender = Female
 BaseMoney = 32
 ShadowXY = 0,-8
 #-------------------------------
+[BATTLEGIRL]
+Name = Battle Girl
+Gender = Female
+BaseMoney = 32
+ShadowXY = 0,-2
+#-------------------------------
 [SMASHER]
 Name = Smasher
 Gender = Female
+BaseMoney = 32
+ShadowXY = 0,-2
+#-------------------------------
+[HIKER]
+Name = Hiker
+Gender = Male
 BaseMoney = 32
 ShadowXY = 0,-2
 #-------------------------------
