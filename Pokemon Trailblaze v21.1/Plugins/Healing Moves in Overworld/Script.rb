@@ -75,23 +75,23 @@ class PokemonPartyScreen
             newpkmn = @party[party_idx]
             movename = move.name
             if move.pp < 1
-              pbDisplay(_INTL("Não tem PP suficiente..."))
+              pbDisplay(_INTL("This move does not have enough PP..."))
               next
             end
             if party_idx == old_party_idx
-              pbDisplay(_INTL("{1} não pode usar {2} em si mesmo",pkmn.name,movename))
+              pbDisplay(_INTL("{1} cannot use {2} on itself",pkmn.name,movename))
               next
             elsif newpkmn.egg?
-              pbDisplay(_INTL("{1} não pode ser usado em ovos!",movename))
+              pbDisplay(_INTL("{1} can't use this move on an Egg!",movename))
               next
             elsif newpkmn.fainted? || newpkmn.hp == newpkmn.totalhp
-              pbDisplay(_INTL("{1} não pode ser usado nesse Pokémon.",movename))
+              pbDisplay(_INTL("{1} cannot be used on this Pokémon.",movename))
               next
             else
               move.pp -= 1
               amt = [(newpkmn.totalhp/2).floor,1].max
               hpgain = pbItemRestoreHP(newpkmn, amt)
-              @scene.pbDisplay(_INTL("{1} curou o HP em {2} pontos.",newpkmn.name,hpgain))
+              @scene.pbDisplay(_INTL("{1} healed the HP in {2} pontos.",newpkmn.name,hpgain))
               pbRefresh
             end
             break if pkmn.hp <= amt
@@ -107,7 +107,7 @@ class PokemonPartyScreen
               pbDisplay(_INTL("Not enough HP..."))
               next
             end
-            @scene.pbSetHelpText(_INTL("Selecione um Pokémon?"))
+            @scene.pbSetHelpText(_INTL("Select which Pokémon?"))
             old_party_idx = party_idx
             loop do
               @scene.pbPreSelect(old_party_idx)
@@ -116,7 +116,7 @@ class PokemonPartyScreen
               newpkmn = @party[party_idx]
               movename = move.name
               if move.pp < 1
-                pbDisplay(_INTL("Não tem PP suficiente..."))
+                pbDisplay(_INTL("This move does not have enough PP..."))
                 next
               end
               if party_idx == old_party_idx
@@ -215,7 +215,7 @@ class PokemonPartyScreen
             newpkmn = @party[party_idx]
             movename = move.name
             if move.pp < 1
-              pbDisplay(_INTL("Não tem PP suficiente..."))
+              pbDisplay(_INTL("This move does not have enough PP......"))
               next
             end
             if newpkmn.egg?
