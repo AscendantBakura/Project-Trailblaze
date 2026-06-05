@@ -386,3 +386,75 @@ Pokemon = AUDINO,30
     EV = 252,0,252,0,4,0
     Happiness = 255
     Ball = POKEBALL
+#-------------------------------
+[YOUNGSTER1,Kellan]
+LoseText = "Urgh..."
+Pokemon = MIMEJR,15
+Pokemon = PSYDUCK,15
+Pokemon = SLOWPOKE,15
+#-------------------------------
+[YOUNGSTER1,Rodney]
+LoseText = "I'll beat you next time!"
+Pokemon = MACHOP,15
+Pokemon = POLIWAG,15
+Pokemon = SANDSHREW,15
+#-------------------------------
+[YOUNGSTER1,Landry]
+LoseText = "Dang it..."
+Pokemon = GROWLITHE,15
+Pokemon = BELLSPROUT,15
+Pokemon = VOLTORB,15
+#-------------------------------
+[LASS1,April]
+LoseText = "How dare you!"
+Pokemon = WARTORTLE,15
+Pokemon = KRABBY,15
+Pokemon = RATTATA,15
+#-------------------------------
+[LASS1,Annalee]
+LoseText = "This sucks!"
+Pokemon = VULPIX,20
+Pokemon = TANGELA,20
+Pokemon = HORSEA,20
+#-------------------------------
+[LASS1,Amiya]
+LoseText = "This sucks!"
+Pokemon = PSYDUCK,22
+Pokemon = TANGELA,20
+Pokemon = FARFETCHD,22
+#-------------------------------
+[BACKPACKER_M,Jairo]
+LoseText = "This sucks!"
+Pokemon = ZUBAT,24
+Pokemon = DIGLETT,23
+Pokemon = NIDORINA,23
+#-------------------------------
+[BACKPACKER_M,Colt]
+LoseText = "This sucks!"
+Pokemon = ELEKID,24
+Pokemon = RATICATE,24
+Pokemon = MEOWTH,23
+#-------------------------------
+[BACKPACKER_M,Ed]
+LoseText = "This sucks!"
+Pokemon = GROWLITHE,15
+Pokemon = KANGASKHAN,15
+Pokemon = DROWZEE,15
+#-------------------------------
+[BACKPACKER_F,Muse]
+LoseText = "This sucks!"
+Pokemon = ZUBAT,24
+Pokemon = DIGLETT,23
+Pokemon = NIDORINA,23
+#-------------------------------
+[BACKPACKER_F,Zoey]
+LoseText = "This sucks!"
+Pokemon = ELEKID,24
+Pokemon = RATICATE,24
+Pokemon = MEOWTH,23
+#-------------------------------
+[BACKPACKER_F,Jennifer]
+LoseText = "This sucks!"
+Pokemon = GROWLITHE,15
+Pokemon = KANGASKHAN,15
+Pokemon = DROWZEE,15
