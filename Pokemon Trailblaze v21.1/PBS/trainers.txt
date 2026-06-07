@@ -456,3 +456,9 @@ LoseText = "This sucks!"
 Pokemon = GROWLITHE,15
 Pokemon = KANGASKHAN,15
 Pokemon = DROWZEE,15
+#-------------------------------
+[BATTLEGIRL,Kaii]
+LoseText = ...
+Pokemon = SHROOMISH,15
+Pokemon = CHESPIN,15
+Pokemon = TIMBURR,15
