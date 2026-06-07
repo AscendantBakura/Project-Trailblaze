@@ -462,3 +462,9 @@ LoseText = ...
 Pokemon = SHROOMISH,15
 Pokemon = CHESPIN,15
 Pokemon = TIMBURR,15
+#-------------------------------
+[BLACKBELT,Aster]
+LoseText = ...
+Pokemon = CROAGUNK,15
+Pokemon = MANKEY,15
+Pokemon = SCRAGGY,15
