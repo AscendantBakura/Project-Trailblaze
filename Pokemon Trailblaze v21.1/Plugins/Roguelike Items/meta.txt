@@ -1,0 +1,7 @@
+Name       = Roguelike Items
+Version    = 1.0.2
+Essentials = 21.1
+Requires   = v21.1 Hotfixes, 1.0.0
+Requires   = Generation 9 Pack, 1.0.0
+Website    = https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Credits    = Golisopod User

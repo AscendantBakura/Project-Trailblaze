@@ -467,3 +467,16 @@ WildVictoryBGM = V Theme - Sumes
 TrainerVictoryBGM = V Theme - Sumes
 Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 #-------------------------------
+[127]   # Beginner Park
+Name = Beginner Park
+MapPosition = 0,16,10
+Outdoor = true
+Dungeon = true
+BattleBack = Park
+Environment = Cave
+WildBattleBGM = XD 03 Battle SIM
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+WildVictoryBGM = V Theme - Sumes
+TrainerVictoryBGM = V Theme - Sumes
+Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
+#-------------------------------
