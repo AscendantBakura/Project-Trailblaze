@@ -473,7 +473,6 @@ MapPosition = 0,16,10
 Outdoor = true
 Dungeon = true
 BattleBack = Park
-Environment = Cave
 WildBattleBGM = XD 03 Battle SIM
 TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
 WildVictoryBGM = V Theme - Sumes
