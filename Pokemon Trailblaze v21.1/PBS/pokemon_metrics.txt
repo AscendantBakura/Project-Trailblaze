@@ -6495,8 +6495,15 @@ DmaxFrontSprite = 0,0
 ShadowSprite = 0,0,0
 #-------------------------------
 [ZOROARK,3]
-BackSprite = 3,40
+BackSprite = 5,40
 FrontSprite = 0,22
+DmaxBackSprite = 0,0
+DmaxFrontSprite = 0,27
+ShadowSprite = 0,0,0
+#-------------------------------
+[ZOROARK,2]
+BackSprite = -5,42
+FrontSprite = -1,21
 DmaxBackSprite = 0,0
 DmaxFrontSprite = 0,27
 ShadowSprite = 0,0,0
