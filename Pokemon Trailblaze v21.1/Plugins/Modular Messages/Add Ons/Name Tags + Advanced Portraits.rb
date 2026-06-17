@@ -104,28 +104,28 @@ module Gela_Settings
 #----- PORTRAIT POSITIONING SETTINGS -------------------------------------------
 
 # Base gap between portraits and screen edges (px)
-    PORTRAIT_GAP_EDGE = 16
+    PORTRAIT_GAP_EDGE = 0
     
 # Additional offset for left portraits (px)
-    PORTRAIT_OFFSET_LEFT_X = 0
+    PORTRAIT_OFFSET_LEFT_X = -60
     PORTRAIT_OFFSET_LEFT_Y = 0
     
 # Additional offset for right portraits (px)
-    PORTRAIT_OFFSET_RIGHT_X = 0
+    PORTRAIT_OFFSET_RIGHT_X = 60
     PORTRAIT_OFFSET_RIGHT_Y = 0
     
 # The gap (px) between the top of the messagebox and
-    PORTRAIT_GAP_HEIGHT = 0
+    PORTRAIT_GAP_HEIGHT = -90
 
 #----- PORTRAIT APPEARANCE SETTINGS ---------------------------------------------
     
 # Portrait window and picture dimensions
 # [window_width, window_height, picture_width, picture_height]
-    PORTRAIT_SIZES = [224, 224, 192, 192]
+    PORTRAIT_SIZES = [384, 384, 384, 384]
 
 # Global scale for all portrait dimensions.
 # Set to 1 for default size, 2 for double size, etc.
-    PORTRAIT_SCALE = 1.25
+    PORTRAIT_SCALE = 1
 
 # Whether to show windowskin border for portraits
     SHOW_PORTRAIT_WINDOWSKIN = false
