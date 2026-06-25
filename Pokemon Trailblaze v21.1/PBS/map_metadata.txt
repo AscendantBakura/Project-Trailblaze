@@ -479,3 +479,15 @@ WildVictoryBGM = V Theme - Sumes
 TrainerVictoryBGM = V Theme - Sumes
 Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
 #-------------------------------
+[128]   # Secret Savanna
+Name = Secret Savanna
+MapPosition = 0,16,10
+Outdoor = true
+Dungeon = true
+BattleBack = rocky
+WildBattleBGM = XD 03 Battle SIM
+TrainerBattleBGM = Pokemon Colosseum OST Normal Battle
+WildVictoryBGM = V Theme - Sumes
+TrainerVictoryBGM = V Theme - Sumes
+Flags = Magnetic,DistortionWorld,ScaleWildEncounterLevels
+#-------------------------------
