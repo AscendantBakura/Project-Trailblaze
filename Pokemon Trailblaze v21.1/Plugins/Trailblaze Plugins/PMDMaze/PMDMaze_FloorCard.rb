@@ -1,4 +1,4 @@
-﻿class NextFloor
+class NextFloor
   def initialize
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @viewport.z = 99999
@@ -7,7 +7,7 @@
   end
 
   def floor_card_bg_path
-    bgs = PMDDungeon::Config::FLOOR_CARD_BG_BY_TIME
+    bgs = PMDDungeon::DataStore.setting(:Config, :FLOOR_CARD_BG_BY_TIME)
     return bgs[:day] if !$game_switches || !defined?(TrailblazeTimeHUD)
     return bgs[:morning]   if $game_switches[TrailblazeTimeHUD::TIME_SWITCHES["MORNING"]]
     return bgs[:afternoon] if $game_switches[TrailblazeTimeHUD::TIME_SWITCHES["AFTERNOON"]]
@@ -25,12 +25,12 @@
     base_color   = Color.new(255, 255, 255, 255)
     shadow_color = Color.new(0, 0, 0, 255)
     dungeon_map_id = PMDDungeon.map_id_for_floor($PokemonGlobal.dungeonFloor)
-    dungeon_title = PMDDungeon::Config::DUNGEON_NAMES[dungeon_map_id] || PMDDungeon::Config::FLOOR_CARD_DEFAULT_TITLE
+    dungeon_title = PMDDungeon::DataStore.setting(:Config, :DUNGEON_NAMES)[dungeon_map_id] || PMDDungeon::DataStore.setting(:Config, :FLOOR_CARD_DEFAULT_TITLE)
     text = "<ac>" + _INTL("{1}\n\nFloor {2}", dungeon_title, $PokemonGlobal.dungeonFloor) + "</ac>"
     drawFormattedTextEx(@sprites["overlay"].bitmap, 0, Graphics.height / 2 - 80, @sprites["overlay"].bitmap.width, text, base_color, shadow_color)
 
     pbFadeInAndShow(@sprites)
-    PMDDungeon::Config::FLOOR_CARD_DISPLAY_FRAMES.times do
+    PMDDungeon::DataStore.setting(:Config, :FLOOR_CARD_DISPLAY_FRAMES).times do
       pbUpdateSpriteHash(@sprites)
       Graphics.update
       Input.update

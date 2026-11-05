@@ -1,0 +1,13 @@
+{:versioni:bundlel+,þA:	data{:BURN_TRAP{I"	Type:ET:statusI"Floors;	T[iiçI"Weight;	Tf1e1I"Graphic;	T"Dungeon Trap FlamethrowerI"Message;	T"
+Burn!I"Disappears;	TFI"FailChance;	Tf	0.05I"Status;	T:	BURN:HYPNOSIS_TRAP{@	;
+@
+[iiç@f8@"Dungeon Trap Hypnosis@"Nodding off? @F@@@:
+SLEEP:VOLTORB{@	:explosion@
+[iiç@f6@"Dungeon Trap Explosion@"
+BOOM!@T@@I"DamageFraction;	Tf0.1I"DampBlocked;	TT:SPIKE_FIELD{@	:spikes@
+[iiç@@@"Dungeon Trap Spikes Down@"You stepped on spikes@F@@@ @I"IgnoreRaised;	TT:PP_DRAIN{@	:pp_down@
+[iiç@f4@"Dungeon Trap PP Down@".A strange portal opens beneath your feet!@T@@I"PPFraction;	Tf0.2:PARALYZE_TRAP{@	;
+@
+[iiç@f3@"Dungeon Trap Paralysis@"Shock Trap! @F@@@:PARALYSIS:POISON_TRAP{@	;
+@
+[iiç@f2@"Dungeon Trap Poison Gas@"Catch !@F@@@:POISON

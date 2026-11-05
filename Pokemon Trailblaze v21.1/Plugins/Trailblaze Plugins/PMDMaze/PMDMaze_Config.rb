@@ -16,7 +16,7 @@ module PMDDungeon
     # Dungeon runtime map IDs used by floor routing.
     # Example:
     # MAIN_DUNGEON_MAP_IDS = [108, 121]
-    MAIN_DUNGEON_MAP_IDS = [108]
+    MAIN_DUNGEON_MAP_IDS = [108, 127]
 
     # Floor routing example:
     # DUNGEON_MAP_BY_FLOOR = {
@@ -52,7 +52,9 @@ module PMDDungeon
     #   108 => :MINESHAFT,
     #   121 => :RUINS
     # }
-    DUNGEON_TILESET_DATA_ID_BY_MAP = {}
+    DUNGEON_TILESET_DATA_ID_BY_MAP = {
+      127 => 44
+    }
 
     # Fallback DungeonTileset used when neither the map override nor the map's
     # own tileset_id resolves to a valid DungeonTileset entry.
@@ -76,7 +78,8 @@ module PMDDungeon
     #   121 => "Forgotten Ruins"
     # }
     DUNGEON_NAMES = {
-      108 => "Mineshaft"
+      108 => "Mineshaft",
+      127 => "Beginner Park"
     }
     FLOOR_CARD_DEFAULT_TITLE = "Dungeon"
   end

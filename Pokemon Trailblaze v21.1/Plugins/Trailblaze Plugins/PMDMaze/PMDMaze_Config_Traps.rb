@@ -101,7 +101,7 @@ module PMDDungeon
       },
       {
         id: :PP_DRAIN,
-        type: :PP_DOWN,
+        type: :pp_down,
         floors: 1..999,
         weight: 4,
         graphic: "Dungeon Trap PP Down",

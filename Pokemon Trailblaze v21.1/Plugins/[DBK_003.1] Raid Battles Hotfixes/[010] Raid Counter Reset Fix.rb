@@ -14,19 +14,15 @@ class Battle
   alias raid_counter_pbEndOfBattle pbEndOfBattle
   
   def pbEndOfBattle
-    # Always clear raid state when any raid battle ends (win or lose)
+    # End-of-battle handlers still need rank, rewards and capture settings.
+    raid_counter_pbEndOfBattle
+  ensure
     if @raidRules && !@raidRules.empty?
-      # COMPLETE RESET: Clear the entire hash, not just individual keys
-      # This prevents any leftover data from persisting
-      @raidRules.clear
-      
-      # Also clear any instance variables that might be caching values
+      @raidRules = {}
       @raid_turnCount = nil if defined?(@raid_turnCount)
       @raid_koCount = nil if defined?(@raid_koCount)
       @raidBattle = nil if defined?(@raidBattle)
     end
-    
-    raid_counter_pbEndOfBattle
   end
 end
 
@@ -39,14 +35,9 @@ class Battle
   def pbStartBattle
     # Before battle starts, double-check raid state is clean
     if raidBattle? && @raidRules
-      # If counters already exist at start, something went wrong - clear them
-      if @raidRules[:turn_count] || @raidRules[:ko_count] || 
-         @raidRules[:raid_turnCount] || @raidRules[:raid_koCount]
-        @raidRules.delete(:turn_count)
-        @raidRules.delete(:ko_count)
-        @raidRules.delete(:raid_turnCount)
-        @raidRules.delete(:raid_koCount)
-      end
+      # Keep configured limits; only the per-battle round markers are stale.
+      @raidRules.delete(:raid_turnCount)
+      @raidRules.delete(:raid_koCount)
     end
     
     raid_counter_pbStartBattle if defined?(raid_counter_pbStartBattle)

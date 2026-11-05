@@ -1,0 +1,28 @@
+# PMD Dungeon Data v1. See docs/pmd-dungeon-data.md.
+[GLOBAL]
+FormatVersion = 1
+EventTemplateMap = 113
+EventTemplate = 1
+ItemTemplate = 2
+TrapTemplate = 4
+FloorVariable = 0
+BankVariable = 149
+LawVariable = 19
+ChaosVariable = 20
+AllyFollowerName = "PMDAlly"
+DebugMenu = true
+FloorCardFrames = 60
+DefaultTitle = "Dungeon"
+MinimapIcon = "Graphics/UI/overlayUI/iconsOverlayBig"
+MinimapSmallSize = 12
+MinimapFullSize = 18
+FloorCardBackground = morning,"Graphics/UI/Day-Transition.gif"
+FloorCardBackground = afternoon,"Graphics/UI/Afternoon-Transition.gif"
+FloorCardBackground = evening,"Graphics/UI/Evening-Transition.gif"
+FloorCardBackground = night,"Graphics/UI/Night-Transition.gif"
+StatusImmunity = BURN,FIRE
+StatusImmunity = POISON,POISON,STEEL
+StatusImmunity = PARALYSIS,ELECTRIC
+StatusImmunity = FROZEN,ICE
+StatusImmunity = FROSTBITE,ICE
+StatusImmunity = SLEEP

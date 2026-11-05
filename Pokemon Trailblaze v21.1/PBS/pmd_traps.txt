@@ -1,0 +1,73 @@
+# PMD Dungeon Data v1. See docs/pmd-dungeon-data.md.
+
+[BURN_TRAP]
+Type = status
+Floors = "1..999"
+Weight = 10
+Graphic = "Dungeon Trap Flamethrower"
+Message = "Burn!"
+Disappears = false
+FailChance = 0.05
+Status = BURN
+
+[HYPNOSIS_TRAP]
+Type = status
+Floors = "1..999"
+Weight = 8
+Graphic = "Dungeon Trap Hypnosis"
+Message = "Nodding off? "
+Disappears = false
+FailChance = 0.05
+Status = SLEEP
+
+[VOLTORB]
+Type = explosion
+Floors = "1..999"
+Weight = 6
+Graphic = "Dungeon Trap Explosion"
+Message = "BOOM!"
+Disappears = true
+FailChance = 0.05
+DamageFraction = 0.1
+DampBlocked = true
+
+[SPIKE_FIELD]
+Type = spikes
+Floors = "1..999"
+Weight = 8
+Graphic = "Dungeon Trap Spikes Down"
+Message = "You stepped on spikes"
+Disappears = false
+FailChance = 0.05
+DamageFraction = 0.05
+IgnoreRaised = true
+
+[PP_DRAIN]
+Type = pp_down
+Floors = "1..999"
+Weight = 4
+Graphic = "Dungeon Trap PP Down"
+Message = "A strange portal opens beneath your feet!"
+Disappears = true
+FailChance = 0.05
+PPFraction = 0.2
+
+[PARALYZE_TRAP]
+Type = status
+Floors = "1..999"
+Weight = 3
+Graphic = "Dungeon Trap Paralysis"
+Message = "Shock Trap! "
+Disappears = false
+FailChance = 0.05
+Status = PARALYSIS
+
+[POISON_TRAP]
+Type = status
+Floors = "20..999"
+Weight = 2
+Graphic = "Dungeon Trap Poison Gas"
+Message = "Catch !"
+Disappears = false
+FailChance = 0.05
+Status = POISON

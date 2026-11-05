@@ -64,7 +64,7 @@ module PMDDungeon
   end
 
   def self.item_event_count_for_floor(floor)
-    PMDDungeon::ItemConfig::ITEM_EVENT_COUNT_BY_FLOOR.fetch(floor, PMDDungeon::ItemConfig::DEFAULT_ITEM_EVENT_COUNT)
+    PMDDungeon::DataStore.setting(:ItemConfig, :ITEM_EVENT_COUNT_BY_FLOOR).fetch(floor, PMDDungeon::DataStore.setting(:ItemConfig, :DEFAULT_ITEM_EVENT_COUNT))
   end
 
   def self.pick_weighted_entry(entries)
@@ -81,12 +81,12 @@ module PMDDungeon
   end
 
   def self.item_rule_for_item(item_id)
-    return PMDDungeon::ItemConfig::ITEM_POOL.find { |rule| rule[:item] == item_id }
+    return PMDDungeon::DataStore.setting(:ItemConfig, :ITEM_POOL).find { |rule| rule[:item] == item_id }
   end
 
   def self.apply_item_graphic!(event, rule)
     rarity = (rule && rule[:rarity]) ? rule[:rarity] : :common
-    gfx_map = PMDDungeon::ItemConfig::ITEM_RARITY_GRAPHIC || {}
+    gfx_map = PMDDungeon::DataStore.setting(:ItemConfig, :ITEM_RARITY_GRAPHIC) || {}
     gfx = gfx_map[rarity] || gfx_map[:common] || {}
 
     event.pages[0].graphic.tile_id = 0
@@ -99,7 +99,7 @@ module PMDDungeon
   def self.apply_item_open_frame!(event, item_symbol)
     rule = item_rule_for_item(item_symbol)
     rarity = (rule && rule[:rarity]) ? rule[:rarity] : :common
-    gfx_map = PMDDungeon::ItemConfig::ITEM_RARITY_GRAPHIC || {}
+    gfx_map = PMDDungeon::DataStore.setting(:ItemConfig, :ITEM_RARITY_GRAPHIC) || {}
     gfx = gfx_map[rarity] || gfx_map[:common] || {}
     return if !gfx
 
@@ -120,7 +120,7 @@ module PMDDungeon
   end
 
   def self.npc_rule_for_key(npc_key)
-    return PMDDungeon::EventConfig::NPC_POOL.find { |r| r[:npc] == npc_key }
+    return PMDDungeon::DataStore.setting(:EventConfig, :NPC_POOL).find { |r| r[:npc] == npc_key }
   end
 
   def self.npc_key_from_event_name(event_name)
@@ -143,7 +143,7 @@ module PMDDungeon
     required_item = rule[:required_item]
     return nil if required_item.nil?
     if required_item == :random
-      pool = PMDDungeon::EventConfig::NPC_ITEM_POOL || []
+      pool = PMDDungeon::DataStore.setting(:EventConfig, :NPC_ITEM_POOL) || []
       return pool.sample if pool.any?
       return nil
     end
@@ -151,8 +151,8 @@ module PMDDungeon
   end
 
   def self.random_bribe_item
-    pool = PMDDungeon::ItemConfig::ITEM_POOL.map { |rule| rule[:item] }.compact
-    pool = PMDDungeon::EventConfig::NPC_ITEM_POOL if pool.empty?
+    pool = PMDDungeon::DataStore.setting(:ItemConfig, :ITEM_POOL).map { |rule| rule[:item] }.compact
+    pool = PMDDungeon::DataStore.setting(:EventConfig, :NPC_ITEM_POOL) if pool.empty?
     pool = [:POTION] if pool.empty?
     return pool.sample
   end
@@ -213,7 +213,7 @@ module PMDDungeon
   def self.reset_floor_event_state(floor)
     # Reset non-unique event spawn counters when leaving a floor.
     state_map = $PokemonGlobal.dungeonNpcQuestState || {}
-    PMDDungeon::EventConfig::NPC_POOL.each do |rule|
+    PMDDungeon::DataStore.setting(:EventConfig, :NPC_POOL).each do |rule|
       next if rule[:unique_run]
       npc_key = rule[:npc]
       state_data = state_map[npc_key]
@@ -238,12 +238,12 @@ class Game_Event
   end
 end
 
-def createDungeonEvents(_complexity, current_map, new_map_id = PMDDungeon::Config::EVENT_TEMPLATE_MAP_ID)
+def createDungeonEvents(_complexity, current_map, new_map_id = PMDDungeon::DataStore.setting(:Config, :EVENT_TEMPLATE_MAP_ID))
   return if $player.able_pokemon_count == 0
 
   floor = PMDDungeon.current_floor
   new_map = load_data(sprintf('Data/Map%03d.rxdata', new_map_id))
-  template_ids = PMDDungeon::Config::TEMPLATE_EVENT_IDS
+  template_ids = PMDDungeon::DataStore.setting(:Config, :TEMPLATE_EVENT_IDS)
 
   item_seen = $PokemonGlobal.dungeonSpawnedItems
   npc_seen = $PokemonGlobal.dungeonSpawnedNpcs
@@ -264,31 +264,31 @@ def createDungeonEvents(_complexity, current_map, new_map_id = PMDDungeon::Confi
   spawned_count = 0
 
   # Build eligible event lists.
-  eligible_npcs = PMDDungeon::EventConfig::NPC_POOL.select do |rule|
+  eligible_npcs = PMDDungeon::DataStore.setting(:EventConfig, :NPC_POOL).select do |rule|
     next false unless PMDDungeon.floor_matches?(rule[:floors], floor)
     npc_key = rule[:npc]
     next false if rule[:unique_run] && npc_seen[npc_key] > 0
     state_data = npc_state[npc_key]
     state = state_data.is_a?(Hash) ? state_data[:state] : state_data
-    next false if state == :completed
+    next false if rule[:type] != :nurse && state == :completed
     true
   end
 
-  eligible_items = PMDDungeon::ItemConfig::ITEM_POOL.select do |rule|
+  eligible_items = PMDDungeon::DataStore.setting(:ItemConfig, :ITEM_POOL).select do |rule|
     next false unless PMDDungeon.floor_matches?(rule[:floors], floor)
     key = rule[:item]
     next false if rule[:unique_run] && item_seen[key] > 0
     true
   end
 
-  eligible_traps = PMDDungeon::TrapConfig::TRAP_POOL.select do |rule|
+  eligible_traps = PMDDungeon::DataStore.setting(:TrapConfig, :TRAP_POOL).select do |rule|
     next false unless PMDDungeon.floor_matches?(rule[:floors], floor)
     true
   end
 
-  item_chance = PMDDungeon::EventConfig::ITEM_SPAWN_CHANCE
-  npc_chance  = PMDDungeon::EventConfig::NPC_SPAWN_CHANCE
-  trap_chance = PMDDungeon::EventConfig::TRAP_SPAWN_CHANCE
+  item_chance = PMDDungeon::DataStore.setting(:EventConfig, :ITEM_SPAWN_CHANCE)
+  npc_chance  = PMDDungeon::DataStore.setting(:EventConfig, :NPC_SPAWN_CHANCE)
+  trap_chance = PMDDungeon::DataStore.setting(:EventConfig, :TRAP_SPAWN_CHANCE)
 
   # Spawn events up to max_events by picking available types repeatedly.
   attempts = 0
@@ -304,7 +304,7 @@ def createDungeonEvents(_complexity, current_map, new_map_id = PMDDungeon::Confi
       state_data = npc_state[npc_key]
       state = state_data.is_a?(Hash) ? state_data[:state] : state_data
       PMDDungeon.floor_matches?(rule[:floors], floor) &&
-        state != :completed &&
+        (rule[:type] == :nurse || state != :completed) &&
         PMDDungeon.rule_allowed?(rule, floor, npc_seen, npc_last_floor, npc_floor_counts)
     end
     eligible_traps = eligible_traps.select do |rule|
@@ -367,6 +367,8 @@ def createDungeonEvents(_complexity, current_map, new_map_id = PMDDungeon::Confi
       new_event.pages[0].graphic.pattern = 0
       new_event.pages[0].graphic.opacity = 255
       new_event.pages[0].graphic.blend_type = 0
+      new_event.pages.each { |pg| pg.list.reject! { |command| [108, 408].include?(command.code) } } if rule[:type] == :nurse
+      new_event.pages[0].move_type = 1 if rule[:type] == :nurse
       current_map.events[new_id] = new_event
       PMDDungeon.mark_rule_usage!(rule, floor, npc_seen, npc_last_floor, npc_floor_counts)
       forced_items << required_item if required_item
@@ -406,8 +408,8 @@ def createDungeonEvents(_complexity, current_map, new_map_id = PMDDungeon::Confi
   end
 end
 
-# Compatibility shim for older calls.
-def createPokemonEventsDungeon(complexity, current_map, new_map_id = PMDDungeon::Config::EVENT_TEMPLATE_MAP_ID)
+# Compatibility
+def createPokemonEventsDungeon(complexity, current_map, new_map_id = PMDDungeon::DataStore.setting(:Config, :EVENT_TEMPLATE_MAP_ID))
   createDungeonEvents(complexity, current_map, new_map_id)
 end
 
@@ -430,7 +432,7 @@ def dialogueEvent
   return npcQuestEvent
 end
 
-# Compatibility shim for existing event commands.
+# Compatibility
 def dialoguePokeEvent
   return dialogueEvent
 end
@@ -525,18 +527,23 @@ end
 
 def handleNurseNpcEvent(event, npc_key, rule)
   state_map = $PokemonGlobal.dungeonNpcQuestState
-  state_data = state_map[npc_key]
-  state = state_data.is_a?(Hash) ? state_data[:state] : state_data
-  return true if state == :completed
+  key = [:nurse, npc_key, PMDDungeon.current_floor, $game_map.map_id, event.id]
+  used = state_map[key] == :completed ? 1 : (state_map[key] || 0)
+  limit = rule.fetch(:heal_limit, 1)
+  if limit > 0 && used >= limit
+    pbMessage(_INTL(rule[:dialogue_exhausted] || "I'm out of healing supplies. Take care on your journey!"))
+    return true
+  end
 
   pbMessage(_INTL(rule[:dialogue_before] || 'Let me heal your team.'))
 
   $player.party.each { |pkmn| pkmn.heal if pkmn }
+  PMDDungeon::Allies.heal if defined?(PMDDungeon::Allies) && PMDDungeon::Allies.active?
+  pbMEPlay('Pkmn healing')
+  state_map[key] = used + 1
 
   pbMessage(_INTL(rule[:dialogue_after] || 'You are all set.'))
 
-  state_map[npc_key] = { state: :completed }
-  removeNpcQuestEventWithEffect(event.id)
   return true
 end
 

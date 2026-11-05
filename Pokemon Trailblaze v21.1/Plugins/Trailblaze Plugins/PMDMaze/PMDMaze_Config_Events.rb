@@ -42,7 +42,7 @@
         floors: 1..999,
         unique_run: false,
         spawn_chance: 0.2,
-        graphic: "NPC Goon",
+        graphic: "NPC Outlaw",
         dialogue_caught: "Now hold on.",
         dialogue_turned_in: "Things were a lot simpler when I was robbing banks with the Deadlock Gang",
         dialogue_after_bribe: "Thanks. Put it on my tab. ",
@@ -53,10 +53,13 @@
         type: :nurse,
         floors: 1..999,
         unique_run: false,
-        spawn_chance: 0.08,
+        spawn_chance: 0.35,
+        max_per_floor: 1,
+        heal_limit: 1,
         graphic: "NPC 16",
-        dialogue_before: "Activating healing stream! ",
-        dialogue_after: "Ha! Feel stronger? "
+        dialogue_before: "You and your Pokemon have come a long way. Let me heal your team.",
+        dialogue_after: "All better! Take care as you explore.",
+        dialogue_exhausted: "I'm out of healing supplies. Take care on your journey!"
       },
       {
         npc: :MERCHANT,

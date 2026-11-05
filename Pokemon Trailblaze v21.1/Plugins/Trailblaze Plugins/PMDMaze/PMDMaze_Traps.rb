@@ -1,4 +1,4 @@
-﻿class Game_Event
+class Game_Event
   alias pmdmaze_trap_refresh refresh
   def refresh
     pmdmaze_trap_refresh
@@ -35,8 +35,10 @@ def activateTrapEvent
   name = event.name
   parts = name.split('_TRAP_')
   return if parts.size < 2
-  idx = parts.last.to_i
-  rule = PMDDungeon::TrapConfig::TRAP_POOL[idx]
+  # Trap events are named "..._TRAP_<rule id>", so look the rule up by id.
+  trap_key = parts[1..-1].join('_TRAP_')
+  rule = PMDDungeon::DataStore.setting(:TrapConfig, :TRAP_POOL).find { |r| r[:id].to_s == trap_key }
+  rule ||= PMDDungeon::DataStore.setting(:TrapConfig, :TRAP_POOL)[trap_key.to_i] if trap_key[/\A\d+\z/]
   return if rule.nil?
 
   current_tile = "#{$game_player.x},#{$game_player.y}"
@@ -52,7 +54,7 @@ def activateTrapEvent
     refreshEventsDungeonLayout
   end
 
-  if rand(100) < 5
+  if rand < rule.fetch(:fail_chance, 0.05)
     pbMessage(_INTL("Luckily, it did not activate!"))
     return
   end
@@ -93,7 +95,7 @@ end
 
 def executeDungeonStatusTrap(rule)
   status     = rule[:status]
-  immunities = PMDDungeon::TrapConfig::STATUS_TYPE_IMMUNITIES[status] || []
+  immunities = PMDDungeon::DataStore.setting(:TrapConfig, :STATUS_TYPE_IMMUNITIES)[status] || []
 
   eligible = $player.party.select do |pkmn|
     next false if pkmn.fainted?
@@ -124,7 +126,7 @@ def executeDungeonExplosionTrap(rule)
   pbMessage(_INTL(rule[:message])) if rule[:message]
 
   lead = $player.party.first
-  if lead && !lead.fainted? && lead.hasAbility?(:DAMP)
+  if rule.fetch(:damp_blocked, true) && lead && !lead.fainted? && lead.hasAbility?(:DAMP)
     pbMessage(_INTL("{1}'s Damp prevented the explosion!", lead.name))
     return false
   end
@@ -136,7 +138,8 @@ def executeDungeonExplosionTrap(rule)
 
   fainted_names = []
   targets.each do |pkmn|
-    dmg = [(pkmn.totalhp * 0.1).ceil, 1].max
+    fraction = rule.fetch(:damage_fraction, 0.1)
+    dmg = fraction == 0 ? 0 : [(pkmn.totalhp * fraction).ceil, 1].max
     old_hp = pkmn.hp
     pkmn.hp = [pkmn.hp - dmg, 0].max
     fainted_names << pkmn.name if old_hp > 0 && pkmn.fainted?
@@ -163,7 +166,8 @@ def executeDungeonPPDownTrap(rule)
   end
 
   move = moves_with_pp.sample
-  reduction = [(move.total_pp * 0.2).ceil, 1].max
+  fraction = rule.fetch(:pp_fraction, 0.2)
+  reduction = fraction == 0 ? 0 : [(move.total_pp * fraction).ceil, 1].max
   move.pp = [move.pp - reduction, 0].max
   pbMessage(_INTL("{1}'s {2} lost PP!", target.name, move.name))
 end
@@ -171,14 +175,15 @@ end
 def executeDungeonSpikesTrap(rule)
   pbMessage(_INTL(rule[:message])) if rule[:message]
 
-  eligible = $player.party.reject { |pkmn| pkmn.fainted? || pokemon_raised?(pkmn) }
+  eligible = $player.party.reject { |pkmn| pkmn.fainted? || rule.fetch(:ignore_raised, true) && pokemon_raised?(pkmn) }
   if eligible.empty?
     pbMessage(_INTL("But the spikes couldn't reach!"))
     return
   end
 
   target = eligible.sample
-  dmg = [(target.totalhp * 0.05).ceil, 1].max
+  fraction = rule.fetch(:damage_fraction, 0.05)
+  dmg = fraction == 0 ? 0 : [(target.totalhp * fraction).ceil, 1].max
   apply_trap_damage(target, dmg, "spikes")
 end
 
@@ -215,7 +220,8 @@ def executeDungeonTeleportTrap(rule)
 
   px = $game_player.x
   py = $game_player.y
-  candidates = room_tiles.reject { |tx, ty| (tx - px).abs < 5 && (ty - py).abs < 5 }
+  distance = rule.fetch(:teleport_distance, 5)
+  candidates = room_tiles.reject { |tx, ty| (tx - px).abs < distance && (ty - py).abs < distance }
   candidates = room_tiles if candidates.empty?
 
   dest = candidates.sample
@@ -240,7 +246,7 @@ end
 
 def executeDungeonMinibossTrap(rule)
   pbMessage(_INTL(rule[:message])) if rule[:message]
-  pbWildBattle(rule[:species], rule[:level] || 30)
+  WildBattle.start(rule[:species], rule[:level] || 30)
 end
 
 EventHandlers.add(:on_player_step_taken, :pmdmaze_reset_trap_step_guard,

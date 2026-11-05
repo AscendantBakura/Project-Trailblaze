@@ -26,3 +26,14 @@ SnapToLargeGrid = true
 LargeVoidTiles = true
 LargeWallTiles = true
 ThinNorthWallOffset = -8
+[44]   # Beginner Park
+Autotile = 1,floor_patch
+Tile = 40,void
+Tile = 41,void_decoration
+Tile = 48,void_decoration_large
+Tile = 42,floor
+Tile = 50,floor_decoration_large
+Tile = 0,walls
+DoubleWalls = true
+FloorPatchUnderWalls = true
+#-------------------------------

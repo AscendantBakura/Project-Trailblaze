@@ -1,4 +1,4 @@
-﻿module RandomDungeon
+module RandomDungeon
   module EdgeMasks
     NORTH = 1
     EAST  = 2
@@ -1021,6 +1021,10 @@ def getItemDungeon(event_id)
 end
 
 def apply_dungeon_complexity(params, complexity)
+  if PMDDungeon::DataStore.bundle
+    PMDDungeon::DataRuntime.apply_parameters(params)
+    return
+  end
   layout = [:ring, :antiring, :plus, :cross, :quadrants, :full].sample
 
 
@@ -1038,15 +1042,16 @@ end
 EventHandlers.add(:on_game_map_setup, :random_dungeon,
   proc { |map_id, map, _tileset_data|
     metadata = GameData::MapMetadata.try_get(map_id)
-    is_dungeon_map = metadata&.random_dungeon || PMDDungeon::Config::MAIN_DUNGEON_MAP_IDS.include?(map_id)
+    is_dungeon_map = metadata&.random_dungeon || PMDDungeon::DataStore.setting(:Config, :MAIN_DUNGEON_MAP_IDS).include?(map_id)
     next if !is_dungeon_map
 
-    configured_tileset_id = PMDDungeon::Config::DUNGEON_TILESET_DATA_ID_BY_MAP[map_id]
-    dungeon_tileset_data = nil
-    dungeon_tileset_data = GameData::DungeonTileset.try_get(configured_tileset_id) if configured_tileset_id
+    configured_tileset_id = PMDDungeon::DataStore.setting(:Config, :DUNGEON_TILESET_DATA_ID_BY_MAP)[map_id]
+    dungeon_tileset_data = PMDDungeon::DataRuntime.tileset_data if PMDDungeon::DataStore.bundle
+    dungeon_tileset_data ||= nil
+    dungeon_tileset_data ||= GameData::DungeonTileset.try_get(configured_tileset_id) if configured_tileset_id
     dungeon_tileset_data ||= GameData::DungeonTileset.try_get(map.tileset_id)
-    if PMDDungeon::Config::DEFAULT_DUNGEON_TILESET_DATA_ID
-      dungeon_tileset_data ||= GameData::DungeonTileset.try_get(PMDDungeon::Config::DEFAULT_DUNGEON_TILESET_DATA_ID)
+    if PMDDungeon::DataStore.setting(:Config, :DEFAULT_DUNGEON_TILESET_DATA_ID)
+      dungeon_tileset_data ||= GameData::DungeonTileset.try_get(PMDDungeon::DataStore.setting(:Config, :DEFAULT_DUNGEON_TILESET_DATA_ID))
     end
     next if !dungeon_tileset_data
 
@@ -1070,7 +1075,7 @@ EventHandlers.add(:on_game_map_setup, :random_dungeon,
     dungeon.generateMapInPlace(map)
     $PokemonGlobal.saveDungeonLayout = dungeon.write
 
-    createDungeonEvents(complexity, map, PMDDungeon::Config::EVENT_TEMPLATE_MAP_ID)
+    createDungeonEvents(complexity, map, PMDDungeon::DataStore.setting(:Config, :EVENT_TEMPLATE_MAP_ID))
 
   failed = false
   occupied_tiles = []

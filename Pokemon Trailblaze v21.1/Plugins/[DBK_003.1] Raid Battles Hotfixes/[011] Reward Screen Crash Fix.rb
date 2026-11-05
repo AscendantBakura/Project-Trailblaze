@@ -27,16 +27,7 @@ class WildBattle
         # Store ALL battle rules before battle starts
         stored_all_rules = $game_temp.battle_rules.dup
         
-        # Run the original battle
-        decision = raid_crash_fix_start_core(*args)
-        
-        # Restore rules AFTER battle but BEFORE reward screen
-        # Since battle_rules is read-only, we need to restore each rule individually
-        stored_all_rules.each do |key, value|
-          $game_temp.instance_variable_get(:@battle_rules)[key] = value
-        end
-        
-        # Store raid data globally for reward screen
+        # Reward data is separate from pending rules for the next encounter.
         if stored_all_rules["raidBattle"]
           raid_data = stored_all_rules["raidBattle"]
           $raid_reward_screen_data = {
@@ -45,7 +36,11 @@ class WildBattle
           }
         end
         
-        return decision
+        begin
+          return raid_crash_fix_start_core(*args)
+        ensure
+          $game_temp.clear_battle_rules
+        end
       else
         # Not a raid battle - normal processing
         return raid_crash_fix_start_core(*args)

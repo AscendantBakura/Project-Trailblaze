@@ -1,8 +1,8 @@
-﻿module PMDDungeon
+module PMDDungeon
   def self.dungeon_map_active?
     return false if !$game_map
     return true if $game_map.metadata&.has_flag?("dungeonDisplay")
-    return Config::MAIN_DUNGEON_MAP_IDS.include?($game_map.map_id)
+    return PMDDungeon::DataStore.setting(:Config, :MAIN_DUNGEON_MAP_IDS).include?($game_map.map_id)
   end
 
   def self.encounter_rule_matches_floor?(rule_floors, floor)
@@ -21,7 +21,7 @@
   end
 
   def self.pick_dungeon_wild_species(floor)
-    pool = EventConfig::EVENT_POOL.select do |rule|
+    pool = PMDDungeon::DataStore.setting(:EventConfig, :EVENT_POOL).select do |rule|
       encounter_rule_matches_floor?(rule[:floors], floor)
     end
     return nil if pool.empty?

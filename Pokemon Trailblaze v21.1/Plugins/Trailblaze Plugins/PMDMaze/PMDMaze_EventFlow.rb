@@ -1,4 +1,4 @@
-﻿module PMDDungeon
+module PMDDungeon
   def self.current_floor
     $PokemonGlobal.dungeonFloor || 0
   end
@@ -10,7 +10,7 @@
 
   def self.max_events_for_floor(floor, dungeon_map_id = nil)
     dungeon_map_id ||= current_dungeon_map_id
-    dungeon_config = EventConfig::MAX_EVENTS_BY_DUNGEON_AND_FLOOR[dungeon_map_id] || {}
+    dungeon_config = PMDDungeon::DataStore.setting(:EventConfig, :MAX_EVENTS_BY_DUNGEON_AND_FLOOR)[dungeon_map_id] || {}
     
     dungeon_config.each do |floor_spec, max_count|
       case floor_spec
@@ -23,13 +23,13 @@
       end
     end
     
-    EventConfig::MAX_EVENTS_PER_FLOOR
+    PMDDungeon::DataStore.setting(:EventConfig, :MAX_EVENTS_PER_FLOOR)
   end
 
   def self.sync_floor_variable
-    return if Config::DUNGEON_FLOOR_VARIABLE_ID.nil?
+    return if PMDDungeon::DataStore.setting(:Config, :DUNGEON_FLOOR_VARIABLE_ID).nil?
     return if !$game_variables
-    $game_variables[Config::DUNGEON_FLOOR_VARIABLE_ID] = current_floor
+    $game_variables[PMDDungeon::DataStore.setting(:Config, :DUNGEON_FLOOR_VARIABLE_ID)] = current_floor
   end
 
   def self.reset_run_state!
@@ -54,7 +54,9 @@
   end
 
   def self.prepare_floor(floor)
-    $PokemonGlobal.dungeon_area = :tower
+    data = PMDDungeon::DataStore.current
+    $PokemonGlobal.dungeon_area = data ? data.fetch('ParametersArea', :tower) : :tower
+    $PokemonGlobal.dungeon_version = data.fetch('ParametersVersion', 0) if data
     $PokemonGlobal.dungeonFloor = floor
     $PokemonGlobal.dungeonStepCounter = 0
     sync_floor_variable
@@ -67,10 +69,10 @@
   end
 
   def self.map_id_for_floor(floor = current_floor)
-    Config::DUNGEON_MAP_BY_FLOOR.each do |range, map_id|
+    PMDDungeon::DataStore.setting(:Config, :DUNGEON_MAP_BY_FLOOR).each do |range, map_id|
       return map_id if range.cover?(floor)
     end
-    return Config::MAIN_DUNGEON_MAP_IDS.first
+    return PMDDungeon::DataStore.setting(:Config, :MAIN_DUNGEON_MAP_IDS).first
   end
 
   def self.transfer_to_floor_map(show_floor_card = false)

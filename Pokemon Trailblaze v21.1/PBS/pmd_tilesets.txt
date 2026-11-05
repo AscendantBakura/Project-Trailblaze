@@ -1,0 +1,45 @@
+# PMD Dungeon Data v1. See docs/pmd-dungeon-data.md.
+
+[CAVE]
+Tileset = 7
+Autotile = 1,floor_patch
+Tile = 40,void
+Tile = 41,void_decoration
+Tile = 48,void_decoration_large
+Tile = 42,floor
+Tile = 50,floor_decoration_large
+Tile = 0,walls
+SnapToLargeGrid = false
+LargeVoidTiles = false
+LargeWallTiles = false
+LargeFloorTiles = false
+DoubleWalls = true
+FloorPatchUnderWalls = true
+ThinNorthWallOffset = 0
+StairsDown = 431
+StairsUp = 431
+LadderTop = 0
+HidingTiles = 48..95
+HidingTerrainTags = 2
+
+[PARK]
+Tileset = 44
+Autotile = 1,floor_patch
+Tile = 40,void
+Tile = 41,void_decoration
+Tile = 48,void_decoration_large
+Tile = 42,floor
+Tile = 50,floor_decoration_large
+Tile = 0,walls
+SnapToLargeGrid = false
+LargeVoidTiles = false
+LargeWallTiles = false
+LargeFloorTiles = false
+DoubleWalls = true
+FloorPatchUnderWalls = true
+ThinNorthWallOffset = 0
+StairsDown = 431
+StairsUp = 430
+LadderTop = 422
+HidingTiles = 48..95
+HidingTerrainTags = 2

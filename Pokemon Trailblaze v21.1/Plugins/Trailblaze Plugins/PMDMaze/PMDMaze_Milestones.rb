@@ -1,6 +1,6 @@
-﻿module PMDDungeon
+module PMDDungeon
   def self.milestone_for_floor(floor)
-    MilestoneConfig::MILESTONES.find { |m| m[:floor] == floor }
+    PMDDungeon::DataStore.setting(:MilestoneConfig, :MILESTONES).find { |m| m[:floor] == floor }
   end
 
   def self.handle_milestone(milestone)
@@ -15,7 +15,7 @@
         $game_temp.player_new_map_id    = dest
         $game_temp.player_new_x        = x
         $game_temp.player_new_y        = y
-        $game_temp.player_new_direction = 2
+        $game_temp.player_new_direction = milestone[:direction] || 2
         $scene.transfer_player
         $game_map.autoplay
         $game_map.refresh
@@ -32,7 +32,7 @@
         $game_temp.player_new_map_id    = dest
         $game_temp.player_new_x        = x
         $game_temp.player_new_y        = y
-        $game_temp.player_new_direction = 2
+        $game_temp.player_new_direction = milestone[:direction] || 2
         $scene.transfer_player
         $game_map.autoplay
         $game_map.refresh
@@ -61,7 +61,7 @@
             $game_temp.player_new_map_id    = dest
             $game_temp.player_new_x        = x
             $game_temp.player_new_y        = y
-            $game_temp.player_new_direction = 2
+            $game_temp.player_new_direction = milestone[:direction] || 2
             $scene.transfer_player
             $game_map.autoplay
             $game_map.refresh
