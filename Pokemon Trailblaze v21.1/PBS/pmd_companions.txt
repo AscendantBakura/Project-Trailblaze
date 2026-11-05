@@ -1,0 +1,40 @@
+# PMD Dungeon Data v1. See docs/pmd-dungeon-data.md.
+[HILDA]
+TrainerType = POKEMONTRAINER_Hilda
+TrainerName = "Hilda"
+TrainerVersion = 0
+PartyMode = generated
+Graphic = "NPC Hilda"
+MinLevel = 5
+LevelOffset = 0
+PartnerScope = dungeon
+AskMessage = "Hilda: Heading into the dungeon? It's dangerous to go alone."
+ConfirmMessage = "Travel together with Hilda?"
+AcceptChoice = "Yes"
+DeclineChoice = "No"
+AcceptMessage = "Hilda: Great! My Pokémon and I will fight right beside yours."
+DeclineMessage = ""
+AlreadyFollowingMessage = "Hilda: Looks like you already have a partner."
+DungeonRecruitMessage = "Hilda: Let's talk once we're back in town."
+KeepChoice = "Keep going"
+TeamChoice = "Your team"
+DismissChoice = "Part ways"
+KeepMessage = "Hilda: Right behind you!"
+DismissConfirm = "Part ways with Hilda?"
+DismissAcceptChoice = "Yes"
+DismissDeclineChoice = "No"
+DismissMessage = "Hilda: Okay. You know where to find me."
+DismissCancelMessage = ""
+FlavourChance = 0.004
+FlavourCooldown = 200
+Pokemon = TEPIG,0
+Pokemon = PURRLOIN,0
+TalkMessage = "Hilda: What's up?"
+TalkMessage = "Hilda: 1"
+TalkMessage = "Hilda: 2"
+FlavourMessage = "Hilda: 1"
+FlavourMessage = "Hilda: 2"
+FlavourMessage = "Hilda: 3"
+FlavourMessage = "Hilda: 4"
+FlavourMessage = "Hilda: 5"
+# Optional [HILDA@BEGINNER_PARK] sections may override walking lines and frequency.
